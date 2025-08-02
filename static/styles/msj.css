@@ -1,0 +1,62 @@
+/* Fondo del modal (una capa oscura semitransparente) */
+#myModal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo de la alerta (contenedor de la notificación) */
+#myModal .alert {
+  background-color: #d9edf7;  /* Color de fondo info (puedes cambiarlo según el tipo de mensaje) */
+  border: 1px solid #b9def0;
+  color: #31708f;
+  padding: 15px 40px 15px 50px; /* Espaciado para dar lugar al ícono y el botón de cerrar */
+  border-radius: 4px;
+  margin: 20% auto; /* Centrado vertical (aproximadamente) y horizontal */
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  font-family: sans-serif;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Ícono a la izquierda */
+#myModal .alert .icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+/* Botón de cierre (la "X") */
+#myModal .alert .close-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Si usas botón de confirmación para redirección */
+#myModal .alert .confirm-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #31708f;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Opcional: Cambio de color al hover */
+#myModal .alert .confirm-btn:hover {
+  background-color: #285e8e;
+}

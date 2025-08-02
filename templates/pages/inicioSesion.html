@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Inicio de sesión</title>
+
+  <!-- Vincula tu CSS externo (ajusta la ruta si difiere) -->
+  <link rel="stylesheet" href="/static/styles/inicioSesion.css" type="text/css">
+  <link rel="stylesheet" href="../../static/styles/iniciosesion.css" type="text/css">
+
+  <!-- Icono (opcional) -->
+  <link rel="icon" href="../../static/img/iconos/E.png" type="image/png">
+</head>
+<body>
+
+  <!-- Contenedor principal (dos columnas) -->
+  <div class="login-container">
+
+    <!-- Columna Izquierda: Formulario (50%) -->
+    <div class="form-side">
+      <!-- Contenedor interno para hacerlo más angosto -->
+      <div class="form-content">
+        <h1>Inicio de sesión</h1>
+        <p>Por favor inicie sesión para continuar con su cuenta</p>
+
+        <!-- Formulario -->
+        <form id="loginForm" action="http://127.0.0.1:8000/inicioSesion" method="post">
+
+          <!-- Campo de correo con bordes redondeados -->
+          <div class="input-group">
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="text-field"
+              placeholder="Escribe tu correo"
+              required
+            >
+          </div>
+
+          <!-- Campo de contraseña con ícono ojo para mostrar/ocultar mientras se presione -->
+          <div class="input-group password-group">
+            <input 
+              type="password" 
+              id="contraseña" 
+              name="contraseña" 
+              class="text-field"
+              placeholder="Ingresa tu contraseña" 
+              required
+            >
+            <!-- Ícono del ojo -->
+            <span 
+              class="toggle-icon"
+              onmousedown="showPassword()" 
+              onmouseup="hidePassword()"
+              onmouseleave="hidePassword()"
+            >
+              <!-- Ajusta la ruta de la imagen de tu ícono de ojo -->
+              <img src="../../static/img/inicioSesion/ojo.png" alt="Mostrar contraseña">
+            </span>
+          </div>
+
+          <!-- Checkbox "Recordar mis datos" -->
+          <div class="checkbox-group">
+            <input 
+              type="checkbox" 
+              id="remember-me" 
+              name="remember-me"
+            >
+            <label for="remember-me">Recordar mis datos</label>
+          </div>
+
+          <!-- Botón de Ingresar -->
+          <button type="submit" class="btn">Ingresar</button>
+        </form>
+        <script src="{{ url_for('static', filename='js/errorLogin.js') }}"></script>
+
+        <!-- Enlaces (¿Has olvidado...? / ¿No tienes cuenta...?) -->
+        <div class="links">
+          <p>¿Has olvidado tu contraseña? 
+            <a href="{{ url_for('recuperarContraseña') }}">Ingresa aquí</a>
+          </p>
+          <p>¿No tienes una cuenta? 
+            <a href="{{ url_for('crearCuenta') }}">Crear una</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Imagen de letras (50%) -->
+    <div class="image-side"></div>
+  </div>
+
+  <!-- Script para mostrar/ocultar la contraseña solo mientras se presione el ícono -->
+  <script>
+    function showPassword() {
+      document.getElementById('contraseña').type = 'text';
+    }
+    function hidePassword() {
+      document.getElementById('contraseña').type = 'password';
+    }
+  </script>
+
+</body>
+</html>

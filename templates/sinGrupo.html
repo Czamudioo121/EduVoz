@@ -1,0 +1,105 @@
+{% if alumno.IdGrupo %}
+<header>
+  <form action="{{ url_for('cerrar_sesion') }}" method="POST">
+    <button type="submit" class="btn-cerrar-sesion">Cerrar sesión</button>
+  </form>
+</header>
+
+<div class="contenedor">
+  <!-- COLUMNA IZQUIERDA -->
+  <div class="left-col">
+    {% if alumno.Foto=="static/img/alumnos/usuario.png" %}
+    <img src="/static/img/alumnos/usaurio.png" alt="Foto Alumno" class="user-img">
+    {% else %}
+    <img src="{{ alumno.Foto }}" alt="Foto Alumno" class="user-img">
+    {% endif %}
+    <h2 class="nombre-alumno">{{ alumno.Nombre }}</h2>
+
+    <div class="botones">
+      <form action="{{ url_for('progresoAlumno') }}">
+        <button type="submit" class="progreso">
+          <img src="/static/img/sinGrupo/Progreso.png" alt="Progreso" class="btn-icon">
+          Ver progreso
+        </button>
+      </form>
+      <form action="{{ url_for('confAlumno') }}">
+        <button type="submit" class="conf">
+          <img src="/static/img/sinGrupo/Configuracion.png" alt="Configuración" class="btn-icon">
+          Configuración
+        </button>
+      </form>
+      <form action="{{ url_for('salir_grupo') }}" method="POST">
+        <button type="submit" class="salir">
+          <img src="/static/img/sinGrupo/Salir.png" alt="Salir" class="btn-ico">
+          Salir del grupo
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- COLUMNA DERECHA -->
+    <div class="right-col">
+    <!-- Texto de bienvenida -->
+    <h1 class="bienvenido">Bienvenido</h1>
+   
+    <!-- Tercera nube, escalonada respecto a la primera -->
+    <button onclick="window.location.href='/ejerciciosAlumnos'" class="nubes nube-2">
+      <img src="/static/img/alumnos/n2.png" alt="123">
+    </button>
+
+    <!-- Primera nube (ABC) -->
+    <button onclick="window.location.href='/ejercicioLetras'" class="nubes nube-1">
+      <img src="/static/img/alumnos/n3.png" alt="ABC">
+    </button>
+    
+    <!-- Segunda nube (123), escalonada respecto a la primera -->
+    <button onclick="window.location.href='/ejercicioNumeros'" class="nubes nube-2">
+      <img src="/static/img/alumnos/n4.png" alt="123">
+    </button>
+
+  </div>
+
+  {% else %}
+<!-- Si el alumno no tiene un grupo -->
+<div class="form-container">
+    <body class="sin-grupo">
+  <h2 class="bienvenido">Bienvenido</h2>
+  
+  <!-- Contenedor principal en flex -->
+  <div class="form-content">
+
+    {% if alumno.Foto=="static/img/alumnos/usuario.png" %}
+    <!-- Foto de perfil a la izquierda (cuadrada)-->
+    <img src="/static/img/alumnos/usaurio.png" class="profile-img" alt="Imagen del alumno">
+    {% else %}
+    <!-- Foto de perfil a la izquierda (cuadrada) -->
+    <img src="{{ alumno.Foto }}" class="profile-img" alt="Imagen del alumno">
+    {% endif %}
+
+    <!-- Sección derecha -->
+    <div class="right-section">
+      <!-- Instrucción -->
+      <p class="txt">Ingrese el código de la clase proporcionado por el docente</p>
+      
+      <!-- Imagen 123 (opcional) -->
+      <img src="/static/img/sinGrupo/illustracion.png" alt="123" class="numbers-img">
+
+      {% if request.args.get('error') %}
+        <script>
+          alert("{{ request.args.get('error') }}");
+        </script>
+      {% endif %}
+
+      <form id="joinGroupForm" method="POST" action="{{ url_for('unirse_grupo') }}">
+        <!-- Campo para el código (sin etiqueta) -->
+        <input class="codigoCampo" type="text" name="codigo" placeholder="Introduce aqui el codigo" required>
+        <br>
+        <!-- Botones en columna: primero Aceptar, luego Salir -->
+        <button class="aceptar" type="submit">Aceptar</button>
+        <button type="button" class="btn-salir" onclick="window.location.href='/inicioSesion'">Salir</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

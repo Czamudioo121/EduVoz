@@ -1,0 +1,297 @@
+/* ============================
+   RESETEO BÁSICO
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* ============================
+   CONTENEDOR PRINCIPAL
+============================ */
+.container {
+    display: flex;
+    min-height: 100vh; /* Asegura que la sidebar ocupe toda la altura */
+    position: relative; /* Para ubicar el botón Cerrar sesión en la esquina sup. derecha */
+}
+
+/* ============================
+   BOTÓN "CERRAR SESIÓN"
+============================ */
+.close-session-btn {
+    position: absolute;  /* Se ubica respecto a .container */
+    top: 20px;
+    right: 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+}
+.close-session-btn:hover {
+    background-color: #ff0000;
+}
+
+/* ============================
+   SIDEBAR
+============================ */
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    /* Fijamos el ancho total de la sidebar */
+    width: 280px;      
+    min-width: 280px;  
+    border-right: 1px solid #ccc; /* Línea divisoria gris */
+}
+
+/* Columna naranja (angosta) */
+.orange-bar {
+    width: 60px;              /* Ancho fijo de la franja naranja */
+    background-color: #fab26a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;        /* Espacio arriba */
+}
+
+/* Círculo blanco con engrane */
+.gear-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #ff7e05;
+    border-radius: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gear-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Columna blanca dentro de la sidebar */
+.white-col {
+    /* El resto del espacio dentro de la sidebar fija */
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título "Bienvenido administrador" */
+.admin-title {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center; /* Centrado horizontal */
+}
+
+/* Menú lateral con íconos */
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-self: flex-start; /* Menú a la izquierda */
+    margin-left: 20px;      /* Espacio desde el borde izquierdo */
+}
+.sidebar-menu li {
+    margin: 15px 0;
+}
+.sidebar-menu li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 8px;  /* Espacio entre ícono y texto */
+    font-size: 15px;
+}
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+.sidebar-menu li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+/* ============================
+   MAIN CONTENT
+============================ */
+.main-content {
+    /* Ocupa el resto del espacio a la derecha */
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #fff;
+}
+
+/* Encabezado de cada pestaña */
+.header {
+    text-align: left;
+    margin-bottom: 40px;
+    min-height: 250px;
+}
+
+/* El título dentro de .header */
+.header h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Subtexto de cada pestaña */
+.subtext {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* Para que conserve espacio aunque tenga poco texto */
+    min-height: 60px;
+}
+
+/* Formulario de alta (o similar) */
+.alta-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 20px;
+}
+.alta-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.alta-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.alta-btn {
+    background-color: #ff7e05;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 150px; /* Ajusta el ancho del botón */
+    text-align: center;
+}
+.alta-btn:hover {
+    background-color: #ff7e05b2;
+}
+
+.baja-btn{
+    background-color: #ff7e05;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 150px; /* Ajusta el ancho del botón */
+    text-align: center;
+}
+.baja-btn:hover {
+    background-color: #ff7e05b2;
+}
+
+.eliminar-do{
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 150px; /* Ajusta el ancho del botón */
+    text-align: center;
+}
+.eliminar-do:hover {
+    background-color: #ff0000ce;
+}
+
+.actualizar-dat{
+    background-color: #ff7e05;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 150px; /* Ajusta el ancho del botón */
+    text-align: center;
+}
+.actualizar-dat:hover {
+    background-color: #ff7e05b2;
+}
+
+.act{
+    background-color: #ff7e05;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 150px; /* Ajusta el ancho del botón */
+    text-align: center;
+}
+.actu:hover {
+    background-color: #ff7e05b2;
+}
+
+/* Tarjeta o contenedor para "Contáctanos" */
+.contact-box {
+    background-color: #f9f9f9;  /* Fondo claro */
+    border: 1px solid #ddd;    /* Borde suave */
+    padding: 20px;             /* Espacio interno */
+    margin-top: 20px;          /* Separación respecto al título */
+    border-radius: 5px;        /* Bordes ligeramente redondeados */
+  }
+  
+  .contact-box p {
+    margin-bottom: 10px;       /* Separación entre párrafos */
+    line-height: 1.5;          /* Altura de línea agradable */
+  }
+  
+  .contact-box a {
+    color: #007BFF;            /* Color de enlace (ejemplo) */
+    text-decoration: none;     /* Quitar subrayado (opcional) */
+  }
+  
+  .contact-box a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center; /* Centra el iframe horizontalmente */
+    margin-top: 20px;        /* Espacio extra si lo deseas */
+  }
+  
+  .video-container iframe {
+    max-width: 100%;  /* Para que no desborde en pantallas pequeñas */
+    border: none;
+  }
+  
+  

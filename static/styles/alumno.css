@@ -1,0 +1,519 @@
+/* ============================
+   RESETEO BÁSICO
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  background-size: cover;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================
+     CABECERA (Cerrar sesión)
+============================ */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.btn-cerrar-sesion {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.btn-cerrar-sesion:hover {
+  background-color: #cc0000;
+}
+
+/* ============================
+     CONTENEDOR TURQUESA (FIJO)
+============================ */
+.contenedor {
+  position: relative;
+  width: 800px;
+  height: 650px;
+  margin: 0 auto 50px;
+  background-color: #37ABE4;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+/* ============================
+     COLUMNA IZQUIERDA
+============================ */
+.left-col {
+  /* Se agregó margin-top para bajar toda la columna un poco más */
+  margin-top: 30px;
+  /* Desplaza todo (foto, nombre y botones) un poco a la derecha */
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Foto del alumno */
+.user-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+/* Nombre del alumno */
+.nombre-alumno {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Botones de la columna izquierda */
+.botones {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Ícono dentro del botón */
+.btn-icon {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.btn-ico {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.progreso, .conf {
+  display: flex;
+  align-items: center;
+  background-color: #e98a1d;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.salir {
+  display: flex;
+  align-items: center;
+  background-color: #e98a1d;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.progreso:hover, .conf:hover, .salir:hover {
+  background-color: #FF6D04;
+}
+
+/* ============================
+     COLUMNA DERECHA
+============================ */
+/* Usamos display: block para poder centrar manualmente cada elemento */
+.right-col {
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  text-align: center;  /* Centra el texto dentro de la columna */
+}
+
+.bienvenido {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 110px; 
+}
+
+/* ============================
+     NUBES (botones escalonados)
+============================ */
+/* Estilo base para los botones de nubes */
+.nube-1, .nube-2 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;  /* Centra el botón en un contenedor block */
+  padding: 0;
+}
+
+/* Imagen de las nubes */
+.nube-1 img, .nube-2 img {
+  display: block;
+  width: 270px;  /* Ajusta según el tamaño real de tu imagen */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  background: transparent;
+}
+
+.nube-1:hover img, .nube-2:hover img {
+  transform: scale(1.05);
+}
+
+/* Ajustes para la separación y centrado de las nubes */
+.nube-1 {
+    margin-left: 40px;
+}
+  
+.nube-2 {
+    position: relative;
+    top: 0;       /* Quita la superposición (antes: -10px) */
+    left: 265px;   /* Desplaza un poco más a la derecha (antes: 40px) */
+}
+
+/* ============================
+ ALUMNO SIN GRUPO (form-container)
+============================ */
+
+.sin-grupo {
+  min-height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  background: url("/static/img/sinGrupo/fondo.png") no-repeat center center fixed; 
+  background-size: cover;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa al menos el alto de la ventana */
+}
+
+.form-container {
+  background-color: #fffcf9;
+  text-align: center;
+  width: 555px; 
+  height: 425px; 
+  border-radius: 10px;
+  margin: 50px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Barra azul de Bienvenido */
+.form-container .bienvenido {
+  display: block;
+  width: 100%;
+  background-color: #2196f3;
+  color: white;
+  font-size: 26px;
+  margin: 0;
+  padding: 9px 0;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Contenedor en flex para la foto y la sección derecha */
+.form-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Foto de usuario más pequeña (cuadrada) */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px; 
+  object-fit: cover;
+  margin-top: -30px;   
+  margin-left: 20px; 
+}
+
+/* Sección derecha (texto + formulario) */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.numbers-img {
+  width: 170px;
+  height: auto;
+}
+
+/* Texto de instrucciones */
+.txt {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Campo de código */
+.codigoCampo {
+  margin: 10px;
+  border-radius: 7px;
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  border: 1px solid #b6b6b6;
+  text-align: center;
+}
+
+/* Botón Aceptar: mismo ancho que el texto arriba (~300px) */
+.aceptar {
+  margin-top: 10px;
+  width: 220px;   /* Ajusta si quieres más/menos ancho */
+  height: 35px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: rgb(82, 167, 224);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Botón Salir: debajo de Aceptar, mismo ancho */
+.btn-salir {
+  margin-top: 10px;
+  width: 220px;   /* Igual ancho que Aceptar */
+  height: 35px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: rgb(231, 38, 38);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.aceptar:hover {
+  background-color: rgb(69, 143, 192);
+}
+
+.btn-salir:hover {
+  background-color: rgb(177, 26, 26);
+}
+
+/* ----------------------------
+ MEDIA QUERIES (RESPONSIVE)
+---------------------------- */
+
+/* Para pantallas de hasta 800px */
+@media screen and (max-width: 800px) {
+  /* Contenedor principal: de dos columnas a bloque vertical */
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 20px;
+  }
+
+  /* Columnas apiladas y centradas */
+  .left-col,
+  .right-col {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+
+  /* Foto un poco más pequeña si hace falta */
+  .left-col .user-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Botones columna izquierda: más separación */
+  .botones {
+    gap: 30px;
+  }
+
+  /* Nubes: anular desplazamientos manuales y centrar */
+  .nube-1,
+  .nube-2 {
+    position: static !important;
+    margin: 20px auto !important;
+    display: block;
+  }
+  .nube-1 img,
+  .nube-2 img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  /* Ajuste de texto “Bienvenido” en columna derecha (se ocultará) */
+  .right-col .bienvenido {
+    display: none;
+  }
+
+  /* Insertar “Bienvenido” arriba de la foto en columna izquierda */
+  .left-col {
+    position: relative;
+  }
+  .left-col::before {
+    content: "Bienvenido";
+    display: block;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  /* ==========================
+     RESPONSIVE SIN-GRUPO
+  ========================= */
+  .sin-grupo {
+    background-position: center top;
+  }
+  .form-container {
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  .form-container .bienvenido {
+    font-size: 22px;
+  }
+  .form-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto -20px;
+  }
+  .numbers-img {
+    width: 120px;
+  }
+  .txt {
+    font-size: 16px;
+  }
+  .codigoCampo {
+    width: 150px;
+  }
+  .aceptar,
+  .btn-salir {
+    width: 160px;
+    font-size: 16px;
+  }
+}
+
+/* Para pantallas de hasta 600px */
+@media screen and (max-width: 600px) {
+  /* Ajustes adicionales en el contenedor principal */
+  .contenedor {
+    padding: 15px;
+  }
+
+  /* Foto de usuario más pequeña */
+  .left-col .user-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Texto “Bienvenido” creado con ::before, un poco más pequeño */
+  .left-col::before {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  /* Imágenes de nubes más estrechas */
+  .nube-1 img,
+  .nube-2 img {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  /* Botones de columna izquierda más compactos */
+  .progreso,
+  .conf,
+  .salir {
+    width: 140px;
+    height: 36px;
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  /* ==========================
+     RESPONSIVE SIN-GRUPO
+  ========================= */
+  /* Identifica el selector correcto, por ejemplo: */
+.sin-grupo .txt {
+  margin-top: 20px; /* sube o baja este valor hasta que quede a tu gusto */
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+
+  .form-container {
+    width: 95%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+  .form-container .bienvenido {
+    font-size: 20px;
+  }
+  .form-content {
+    gap: 10px;
+  }
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto -15px;
+  }
+  .numbers-img {
+    width: 100px;
+  }
+  .txt {
+    font-size: 14px;
+  }
+  .codigoCampo {
+    width: 100%;
+  }
+  .aceptar,
+  .btn-salir {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}

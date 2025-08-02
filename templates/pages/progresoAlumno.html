@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Progreso Alumno</title>
+  <link rel="icon" href="/static/img/iconos/3.png" type="image/png">
+  <link rel="stylesheet" href="/static/styles/progreso.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Franja naranja con el botón de regresar -->
+    <div class="sidebar-naranja">
+      <button class="back-btn" onclick="window.history.back();">&#10094;</button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+      <h1>Progreso</h1>
+      <p>
+        Visualiza el progreso en las actividades realizadas por el niño. 
+        Aquí puedes ver los aciertos, errores y la tasa de éxito en cada actividad.
+      </p>
+
+      <div class="graficas">
+        <!-- Tarjeta Actividad Letras -->
+        <div class="letras">
+          <h2>Actividad 1 - Letras</h2>
+          <h3>Fecha: {{alumno.FechaAciertosLetras}}</h3>
+          <canvas id="graficoLetras" class="graficoLetras"></canvas>
+          <script>
+            const ctxLetras = document.getElementById('graficoLetras').getContext('2d');
+            new Chart(ctxLetras, {
+              type: 'doughnut',
+              data: {
+                labels: ['Correctas', 'Incorrectas'],
+                datasets: [{
+                  data: [{{ alumno.AciertosLetras }}, {{ 10 - alumno.AciertosLetras }}],
+                  backgroundColor: ['#3ca8f3', '#f33c44'],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                responsive: false,
+                cutout: '70%',
+                plugins: { legend: { position: 'bottom' } }
+              }
+            });
+          </script>
+          <div class="stats">
+            <div class="stat">
+              <p class="value">{{ 10 - alumno.AciertosLetras }}</p>
+              <p class="label">Errores</p>
+            </div>
+            <div class="stat">
+              <p class="value">{{ alumno.AciertosLetras }}</p>
+              <p class="label">Aciertos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Actividad Números -->
+        <div class="numeros">
+          <h2>Actividad 2 - Números</h2>
+          <h3>Fecha: {{alumno.FechaAciertosNumeros}}</h3>
+          <canvas id="graficoNumeros" class="graficoNumeros"></canvas>
+          <script>
+            const ctxNumeros = document.getElementById('graficoNumeros').getContext('2d');
+            new Chart(ctxNumeros, {
+              type: 'doughnut',
+              data: {
+                labels: ['Correctas', 'Incorrectas'],
+                datasets: [{
+                  data: [{{ alumno.AciertosNumeros }}, {{ 10 - alumno.AciertosNumeros }}],
+                  backgroundColor: ['#3ca8f3', '#f33c44'],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                responsive: false,
+                cutout: '70%',
+                plugins: { legend: { position: 'bottom' } }
+              }
+            });
+          </script>
+          <div class="stats">
+            <div class="stat">
+              <p class="value">{{ 10 - alumno.AciertosNumeros }}</p>
+              <p class="label">Errores</p>
+            </div>
+            <div class="stat">
+              <p class="value">{{ alumno.AciertosNumeros }}</p>
+              <p class="label">Aciertos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráficas por cada ejercicio -->
+        {% for e in ejercicios %}
+        <div class="letras">
+          <h2>{{ e.Titulo }}</h2>
+          <h3>Fecha: {{e.Fecha}}</h3>
+          <canvas id="graficoEjercicio{{ loop.index }}" class="graficoLetras"></canvas>
+          <script>
+            const ctxEjercicio{{ loop.index }} = document.getElementById('graficoEjercicio{{ loop.index }}').getContext('2d');
+            new Chart(ctxEjercicio{{ loop.index }}, {
+              type: 'doughnut',
+              data: {
+                labels: ['Correctas', 'Incorrectas'],
+                datasets: [{
+                  data: [{{ e.Aciertos }}, {{ e.Errores }}],
+                  backgroundColor: ['#3ca8f3', '#f33c44'],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                responsive: false,
+                cutout: '70%',
+                plugins: { legend: { position: 'bottom' } }
+              }
+            });
+          </script>
+          <div class="stats">
+            <div class="stat">
+              <p class="value">{{ e.Errores }}</p>
+              <p class="label">Errores</p>
+            </div>
+            <div class="stat">
+              <p class="value">{{ e.Aciertos }}</p>
+              <p class="label">Aciertos</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div> <!-- Fin .graficas -->
+    </div> <!-- Fin .contenido -->
+  </div> <!-- Fin .container -->
+
+</body>
+</html>

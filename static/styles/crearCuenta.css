@@ -1,0 +1,208 @@
+/* ============================
+   RESET BÁSICO
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #000; /* Texto en negro */
+  }
+  
+  /* ============================
+     CONTENEDOR PRINCIPAL
+     2 columnas al 50%
+  ============================ */
+  .crearCuenta-container {
+    display: flex;
+    height: 100vh; /* Ocupa toda la ventana */
+  }
+  
+  /* ============================
+     COLUMNA IZQUIERDA: IMAGEN
+  ============================ */
+  .image-side {
+    width: 50%;
+    background-image: url('../img/inicioSesion/fondo.jpeg'); /* Ajusta la ruta */
+    background-position: center;
+    background-size: cover;  
+    background-repeat: no-repeat;
+  }
+  
+  /* ============================
+     COLUMNA DERECHA: FORMULARIO
+  ============================ */
+  .form-side {
+    width: 50%;
+    display: flex;
+    justify-content: center; /* Centra horizontal */
+    align-items: center;     /* Centra vertical */
+    background-color: #fff;
+  }
+  
+  /* Contenedor interno (más angosto) */
+  .form-content {
+    width: 80%;
+    max-width: 450px;
+  }
+  
+  /* Título principal */
+  .form-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #000;  /* Negro */
+  }
+  
+  /* ============================
+     GRUPOS DE CAMPOS (label + contenedor)
+  ============================ */
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group label {
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #000;  /* Negro */
+  }
+  
+  /* ============================
+     CONTENEDOR PARA CADA INPUT
+     (Incluye el borde redondeado)
+  ============================ */
+  .input-container {
+    position: relative;
+    border: 1px solid #d8d2d2;
+    border-radius: 8px;
+    background-color: #fff;
+    /* Espacio interior para el texto y el ícono */
+    display: flex; 
+    align-items: center;
+    padding: 0 10px; 
+  }
+  
+  /* El input dentro del contenedor */
+  .input-container input {
+    flex: 1;             /* Ocupa el espacio disponible */
+    height: 35px;
+    font-size: 0.95rem;
+    border: none;        /* Sin borde, lo tiene el contenedor */
+    outline: none;
+    color: #000;         /* Texto en negro */
+    background-color: transparent;
+  }
+  
+  /* Placeholder gris */
+  .input-container input::placeholder {
+    color: #999;
+  }
+  
+  /* Efecto de focus: resaltar el contenedor */
+  .input-container:focus-within {
+    border-color: #1A73E8; /* Azul estilo Google */
+  }
+  
+  /* ============================
+     CONTENEDOR ESPECÍFICO PARA
+     CONTRASEÑA + ÍCONO OJO
+  ============================ */
+  .password-container {
+    padding-right: 40px; /* Deja espacio para el ícono */
+  }
+  .password-container input {
+    padding-right: 0; /* Quita padding para no duplicar con el contenedor */
+  }
+  
+  /* Ícono del ojo */
+  .toggle-icon {
+    position: absolute;
+    right: 10px;  /* Espacio a la derecha */
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .toggle-icon img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Instrucciones para la contraseña */
+  .instrucciones {
+    font-size: 0.85rem;
+    color: #444;
+    margin: 10px 0 15px 0;
+  }
+  
+  /* Checkbox con texto legal */
+  .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .checkbox-group input[type="checkbox"] {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+  }
+  .checkbox-group label {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: #000;  /* Negro */
+  }
+  
+  /* Botón “Crear” (Azul estilo Google) */
+  .btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #1A73E8; /* Azul Google-like */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  .btn:hover {
+    background-color: #1669c1;
+  }
+  
+  /* Enlace a iniciar sesión */
+  .already-account {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #000; /* Negro */
+  }
+  .already-account a {
+    color: #1A73E8; 
+    text-decoration: none;
+  }
+  .already-account a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================
+     RESPONSIVIDAD (móviles)
+  ============================ */
+  @media screen and (max-width: 768px) {
+    .crearCuenta-container {
+      flex-direction: column;
+    }
+    .image-side, .form-side {
+      width: 100%;
+    }
+    .image-side {
+      height: 300px; /* Para que se vea la imagen en móvil */
+    }
+    .form-content {
+      width: 90%;
+    }
+  }
+  

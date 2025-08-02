@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/confDon.css') }}">
+  <link rel="icon" href="/static/img/iconos/G.png" type="image/png">
+  <title>Configuraciones docente</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Columna naranja (solo el engrane) -->
+      <div class="orange-bar">
+        <div class="gear-circle">
+          <img src="/static/img/confDocente/gear.png" alt="Engrane" class="gear-icon">
+        </div>
+      </div>
+
+      <!-- Columna blanca (menú lateral y botón de regresar) -->
+      <div class="white-col">
+        <!-- Botón de regresar en la parte superior de la columna blanca -->
+        <button class="back-btn" onclick="window.location.href='{{ url_for('docente') }}'">
+          <span class="arrow-icon">&#10094</span> Regresar
+        </button>
+        <ul class="sidebar-menu">
+          <!-- Se mantiene solo "Contáctanos" y "Video tutorial" -->
+          <li>
+            <a href="#" id="contactar-docente-btn">
+              <img src="/static/img/confDocente/Contact.png" alt="Contáctanos" class="menu-icon">
+              Contáctanos
+            </a>
+          </li>
+          <li>
+            <a href="#" id="videos-tutoriales-btn">
+              <img src="/static/img/confDocente/Help.png" alt="Video tutorial" class="menu-icon">
+              Video tutorial
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content" id="main-content">
+      <div class="contact-box">
+        <h1>Contáctanos</h1>
+        <p>Si tienes alguna duda con la plataforma, háznoslo saber.</p>
+        <br>
+        <p>Correo de contacto: eduvoz212@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Seleccionamos los botones del menú lateral
+    const contactarDocenteBtn = document.getElementById('contactar-docente-btn');
+    const videosTutorialesBtn = document.getElementById('videos-tutoriales-btn');
+
+    // Contenedor principal donde se actualizará el contenido
+    const mainContent = document.getElementById('main-content');
+
+    // Función para cambiar el contenido principal
+    function changeContent(content) {
+      mainContent.innerHTML = content;
+    }
+
+    // Manejar clic en "Contáctanos"
+    contactarDocenteBtn.addEventListener('click', function() {
+      const content = `
+        <div class="contact-box">
+          <h1>Contáctanos</h1>
+          <p>Si tienes alguna duda con la plataforma, háznoslo saber.</p>
+          <br>
+          <p>Correo de contacto: eduvoz212@gmail.com</p>
+        </div>
+      `;
+      changeContent(content);
+    });
+
+    // Manejar clic en "Video tutorial"
+    videosTutorialesBtn.addEventListener('click', function() {
+  const content = `
+    <div class="header">
+      <h1>Video tutorial</h1>
+      <p>A continuación te proporcionamos videos del uso de la aplicación web.</p>
+      <a 
+        href="https://youtu.be/gzAkdh2ymuM" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        • Tutorial para el docente
+      </a>
+    </div>
+  `;
+  changeContent(content);
+});
+
+  </script>
+  <script src="/static/js/docente.js"></script>
+</body>
+</html>

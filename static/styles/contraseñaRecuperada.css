@@ -1,0 +1,157 @@
+/* ============================
+   RESET BÁSICO
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #000; /* Texto en negro */
+  }
+  
+  /* ============================
+     CONTENEDOR PRINCIPAL (2 columnas al 50%)
+  ============================ */
+  .recover-container {
+    display: flex;
+    height: 100vh; /* Ocupa toda la ventana */
+  }
+  
+  /* ============================
+     COLUMNA IZQUIERDA: IMAGEN DE FONDO
+  ============================ */
+  .image-side {
+    width: 50%;
+    background-image: url('../../static/img/recuperarContraseña/fondo.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* ============================
+     COLUMNA DERECHA: FORMULARIO
+     Ubicado a la derecha y un poco abajo gracias al padding
+  ============================ */
+  .form-side {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start; /* Ubica el contenido en la parte superior */
+    justify-content: flex-start;
+    padding: 80px 40px 40px 100px; /* padding-top, right, bottom, left */
+  }
+  
+  /* Contenedor interno (alineado a la izquierda) */
+  .form-content {
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+  }
+  
+  /* Título grande */
+  .form-content h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para la imagen ilustrativa */
+  .form-content img {
+    width: 130px;
+    margin: 0 auto 20px; /* margen superior e inferior, y auto en los laterales para centrar */
+    display: block;
+  }
+
+  .sub {
+    display: block;  /* O inline-block */
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  /* ============================
+     ESTILOS PARA INPUT Y BOTÓN
+  ============================ */
+  input[type="text"] {
+    margin: 5px auto; 
+    display: block;  
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    margin: 0 auto; 
+    display: block;   
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: rgb(82, 167, 224);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  button:hover {
+    background-color: rgb(61, 128, 172);
+  }
+  .sub1  {
+    display: block;  
+    margin-top: 15px;
+  }
+  
+  /* ============================
+     ESTILOS PARA MENSAJES Y ENLACES
+  ============================ */
+  .error {
+    display: block;  
+    margin-top: 15px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .recover-link a {
+    color: rgb(0, 80, 201);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .recover-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================
+     RESPONSIVIDAD (móviles)
+  ============================ */
+  @media screen and (max-width: 768px) {
+    .recover-container {
+      flex-direction: column;
+    }
+    .image-side,
+    .form-side {
+      width: 100%;
+    }
+    .image-side {
+      height: 300px;
+    }
+    .form-side {
+      padding: 40px 20px;
+    }
+    /* Opcional: ajustar tamaños de input y botón */
+    input[type="text"], button {
+      width: 100%;
+      max-width: 300px;
+    }
+    .form-content h1 {
+      font-size: 30px;
+    }
+  }
+  

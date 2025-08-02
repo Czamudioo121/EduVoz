@@ -1,0 +1,466 @@
+/* ------------------ RESET Y ESTILOS GLOBALES ------------------ */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* ------------------ ENCABEZADO / HEADER ------------------ */
+header {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Para que quede por encima de otros elementos */
+    background-color: #fff;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Ajusta el contenido principal para que no quede debajo del header */
+main, section, .contenido-principal {
+    margin-top: 80px; /* Ajusta según la altura del header */
+}
+
+/* ------------------ LISTA DEL MENÚ ------------------ */
+nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex;
+    gap: 20px;        /* Espacio entre elementos */
+    margin: 0;
+    padding: 0;
+    transform: translateX(-45px);
+}
+
+/* ------------------ NOMBRE DE LA DOCENTE ------------------ */
+.nombre {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-top: -2px;
+}
+
+/* ------------------ ICONO DE CONFIGURACIÓN ------------------ */
+.conf {
+    width: 20px;
+    height: 20px;
+}
+
+/* ------------------ BOTÓN "CERRAR SESIÓN" ------------------ */
+.cerrar .menu {
+    background-color: rgb(248, 71, 71); /* Botón rojo */
+    color: #fff;                        /* Texto blanco */
+    text-decoration: none;
+    padding: 9px 11px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.cerrar .menu:hover {
+    background-color: rgb(153, 55, 55);
+}
+
+/* ------------------ ESTILOS DEL BODY (CONTENIDO PRINCIPAL) ------------------ */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    padding-top: 30px;
+}
+
+/* ------------------ ESTILO DEL CONTENIDO PRINCIPAL ------------------ */
+.textoPrincipal {
+    width: 750px;              /* O el ancho que necesites */
+    margin: 20px;              /* Espacio alrededor (no centrado) */
+    background-color: #fff;
+    padding: 20px;
+    text-align: left;          /* Texto alineado a la izquierda */
+    border-radius: 10px;
+}
+
+.textoPrincipal h1 {
+    margin: -20px 0 10px;
+    font-size: 30px;
+}
+
+.textoPrincipal p {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* ------------------ SECCIÓN DE GRUPO ------------------ */
+
+/* Tarjeta principal para mostrar la información del grupo */
+.grupo-info {
+    width: 600px;
+    margin: 20px auto;
+    background-color: #12D0DE;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: #000;
+    font-family: sans-serif;
+    position: relative;  /* Para posicionar elementos absolutos dentro */
+}
+
+/* Sección superior: título del grupo, botones de editar y eliminar */
+.arriba {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dentroArriba {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#grupo-titulo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Botón para editar el título */
+.editar-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.imgEditar {
+    width: 20px;
+    height: 20px;
+}
+
+/* Botón para eliminar grupo */
+.eliminar {
+    background-color: #ff5959;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.eliminar:hover {
+    background-color: #e14040;
+}
+
+/* Sección inferior: dos recuadros para "Ver alumnos y progreso" y "Código del grupo" */
+.abajo {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center; /* Centra los recuadros horizontalmente */
+}
+
+.progreso p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+/* Contenedor para el ícono y cantidad de alumnos (ubicado en el recuadro azul) */
+.alumnos-info {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.iconoUser {
+    width: 24px;
+    height: 24px;
+}
+
+/* Recuadro "Código del grupo" */
+.codigo {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px 20px; /* Ajusta para subir/bajar el texto */
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.codigo p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 30px 5px; /* Menos espacio debajo del texto "Código del grupo:" */
+
+}
+
+/* Contenedor para agrupar el código y el icono de copiar */
+.caja-codigo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 35px; /* o un valor menor al que tenías */
+    }
+
+
+#codigo-grupo {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    margin-right: 8px;
+    margin-left: 37px; /* Ajusta este valor según lo que necesites */
+    width: 45px; 
+  }
+  
+
+/* Botón para copiar el código */
+.btnCopiar {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.imgCopiar {
+    width: 24px;
+    height: 24px;
+}
+
+/* ------------------ BOTÓN PARA "VER ALUMNOS Y PROGRESO" ------------------ */
+.btnProgreso {
+        flex: 1;
+        display: flex;
+        height: 150px;
+        width: 125px; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        text-decoration: none;
+        border: none;
+        color: #000;
+        cursor: pointer;
+    }
+    
+    #ejerPerImg{
+        width: 80px;
+    }
+    
+    .btnProgreso p {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 10px;
+    }
+    
+    .btnProgreso:hover {
+        filter: brightness(95%);
+    }
+    
+
+/* ------------------ IMAGEN DEL BOTÓN "CREAR GRUPO" ------------------ */
+/* Se mantiene la definición original */
+.btnImagen {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.imgCrear {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-left:100px
+}
+
+.imgCrear:hover {
+    transform: scale(1.05);
+}
+
+/* ------------------ FORMULARIO PARA CREAR GRUPO CON IMAGEN DE FONDO ------------------ */
+/* Oculto inicialmente */
+#formGrupo {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Contenedor de la imagen y el formulario (overlay) */
+.contenedor-formulario {
+    position: relative;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Imagen de fondo para el formulario */
+.imgFondo {
+    width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transform: translateY(10px);
+}
+
+/* Contenedor del contenido del formulario, superpuesto sobre la imagen */
+.contenido-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contenido-form h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* ------------------ CAMPOS Y BOTONES DEL FORMULARIO ------------------ */
+.forCampo {
+    
+    margin: 10px;
+    border-radius: 5px;
+    width: 225px;
+    height: 28px;
+    font-size: 20px;
+    border: 1px solid #d8d2d2;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.crear {
+    font-weight: bold;
+    height: 35px;
+    width: 200px;
+    background-color: #3679ff;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 18px;
+}
+
+.crear:hover {
+    background-color: #3679ffce;
+}
+
+/* ------------------ OTROS ESTILOS ------------------ */
+.tituloMas {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.imgMas {
+    width: 80px;
+}
+
+.btnMas {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border: none;
+}
+
+.btnMas:hover {
+    background-color: rgb(214, 210, 210);
+}
+
+.arriba {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.dentroArriba {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dentroArriba .campo {
+    margin: 10px;
+    border-radius: 7px;
+    width: 130px;
+    height: 25px;
+    font-size: 20px;
+    border: 1px solid #d8d2d2;
+}
+
+.dentroArriba .editar {
+    background-color: rgb(82, 167, 224);
+    height: 35px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+}
+
+.dentroArriba .editar:hover {
+    background-color: #2a4797;
+}
+
+.arriba .editar-btn {
+    border-radius: 8px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.arriba .editar-btn:hover {
+    background-color: rgb(43, 167, 156);
+}
+
+.eliminar {
+    height: 40px;
+    background-color: rgb(243, 77, 77);
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+.eliminar:hover {
+    background-color: rgb(182, 56, 56);
+}
+
+.imgEditar {
+    width: 20px;
+}
+
+.abajo {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Si hubiera reglas adicionales para .codigo en hover, se eliminan */
+.codigo:hover {
+    filter: none;
+}
+
+.imgCopiar {
+    width: 20px;
+    background-color: transparent;
+    border: none;
+}

@@ -1,0 +1,236 @@
+/* ================================
+   RESET BÁSICO Y GLOBAL
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #37ABE4;
+    color: #102a43;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+
+  /* Botón fijo en esquina superior izquierda del viewport */
+.back-btn {
+    position: fixed;
+    top: 16px;             /* separación del borde superior de la ventana */
+    left: 16px;            /* separación del borde izquierdo de la ventana */
+    background: #2f80ed;   /* color de fondo */
+    color: #fff;           /* texto blanco */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: background-color 0.2s;
+    z-index: 1000;         /* siempre arriba */
+  }
+  
+  .back-btn:hover {
+    background-color: #1366d6;
+  }
+  
+  
+  /* ================================
+     CONTENEDOR PRINCIPAL
+  ================================ */
+  .cuerpo {
+    background: #ffffff;
+    width: 450px;
+    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(16, 42, 67, 0.12);
+    padding: 24px;
+    text-align: center;
+    position: relative;
+
+  }
+  
+  /* ================================
+     TÍTULO Y INPUT DE TÍTULO
+  ================================ */
+  label[for="titulo"] {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  #titulo {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #bcccdc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+  
+  #titulo:focus {
+    outline: none;
+    border-color: #486581;
+  }
+  
+  /* ================================
+     SELECTOR DE OPCIONES
+  ================================ */
+  label[for="opciones"] {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  #opciones {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #bcccdc;
+    border-radius: 6px;
+    margin: 8px 0 20px;
+    font-size: 16px;
+  }
+  
+  /* ================================
+     FORMULARIOS DE LETRA Y NÚMERO
+  ================================ */
+  form {
+    background: #f0f4f8;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.08);
+  }
+  
+  form label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  form select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #bcccdc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  form button {
+    background-color: #2f80ed;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  form button:hover {
+    background-color: #1366d6;
+  }
+  
+  /* ================================
+     TABLA DE RESULTADOS
+  ================================ */
+  #tablaValores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+  
+  #tablaValores th,
+  #tablaValores td {
+    padding: 12px 8px;
+    text-align: center;
+    border-bottom: 1px solid #d9e2ec;
+  }
+  
+  #tablaValores th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+  }
+  
+  #tablaValores tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+  
+  #tablaValores button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  #tablaValores button:hover {
+    background-color: #e55050;
+  }
+  
+  /* ================================
+     BOTÓN SUBIR EJERCICIO
+  ================================ */
+  .subireje {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 40px;
+  }
+  
+  .subireje:hover{
+    background-color: #1e874b;
+  }
+  
+  /* ================================
+     BREAKPOINTS
+  ================================ */
+  @media (max-width: 500px) {
+    html, body {
+      padding-top: 20px;
+    }
+    .cuerpo {
+      width: 90%;
+      padding: 16px;
+    }
+    #titulo, #opciones, form select {
+      font-size: 14px;
+    }
+    form button, body > button {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+    #tablaValores th, #tablaValores td {
+      padding: 8px 4px;
+      font-size: 14px;
+    }
+  }
+  
+  #tablaValores td:first-child { /* columna del handle */
+    width: 40px;
+    text-align: center;
+  }
+  .drag-handle {
+    font-size: 1.2em;
+    user-select: none;
+  }
+  

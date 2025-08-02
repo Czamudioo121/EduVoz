@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/docente.css" type="text/css">
+    <link rel="icon" href="/static/img/iconos/1.png" type="image/png">
+    <title>Docente</title>
+</head>
+<body>
+    {% if grupo %}
+    <div class="grupo-info">
+        <!-- Sección superior: título del grupo, botones de editar y eliminar -->
+        <div class="arriba">
+            <div class="dentroArriba">
+                <input type="text" id="input-titulo" value="{{ grupo.Titulo }}" style="display: none;" class="campo">
+                <button id="guardar-btn" style="display: none;" class="editar">Guardar</button>
+                <span id="grupo-titulo">{{ grupo.Titulo }}</span> 
+                <button id="editar-btn" class="editar-btn" style="margin-left: 10px;">
+                    <img src="/static/img/docente/editar.png" alt="" class="imgEditar">
+                </button>
+            </div>
+            <button id="eliminar-btn" class="eliminar">Eliminar Grupo</button>
+        </div>
+    
+        <div class="abajo">
+            <div class="progreso">
+<a href="/listaAlumnos" class="btnProgreso">
+    <p>Ver alumnos y progreso</p>
+    <img src="{{ url_for('static', filename='img/docente/progreso.png') }}" 
+         alt="Icono progreso" width="70">
+</a>
+
+            </div>
+            <div class="codigo">
+                <p>Código del grupo:</p>
+                <div class="caja-codigo">
+                    <span id="codigo-grupo">{{ grupo.Codigo }}</span>
+                    <button class="btnCopiar" onclick="copiarCodigo()">
+                        <img src="/static/img/docente/copiar.png" alt="Copiar" class="imgCopiar">
+                    </button>
+                </div>
+            </div>
+            
+    
+        <!-- Indicador de alumnos (ahora fuera de la sección amarillo) -->
+        <div class="alumnos-info">
+            <img src="/static/img/docente/user-icon.png" alt="Alumnos" class="iconoUser">
+            <strong>{{ grupo.NoAlumnos }}</strong>
+        </div>
+
+        <a href="/crud?correo={{docente.CorreoDocente}}" class="btnProgreso">
+            <p>Ejercicio personalizado</p>
+            <img id="ejerPerImg" src="/static/img/docente/reporte.png" alt="">
+        </a>        
+    </div>
+    
+    
+    {% else %}
+        <!-- Si el docente NO tiene grupo, muestra mensaje y botón -->
+        <div id="mensajeNoGrupo" class="grupo-info">
+            <button class="btnImagen" id="btnCrearGrupo" onclick="mostrarFormulario()">
+                <!-- Reemplaza /static/img/docente/Crear.png por la ruta correcta de tu imagen -->
+                <img src="/static/img/docente/Crear.png" alt="Crear nuevo grupo" class="imgCrear">
+            </button>
+           <!-- Contenedor para la imagen y el formulario -->
+<div id="formGrupo" class="contenedor-formulario" style="display: none;">
+    <!-- Imagen de fondo (ajusta la ruta de la imagen según tu proyecto) -->
+    <img src="/static/img/docente/Gruponomb.png" alt="Fondo para formulario" class="imgFondo">
+
+    <!-- Contenedor para el formulario, superpuesto sobre la imagen -->
+    <div class="contenido-form">
+        <form action="/crearGrupo" method="POST">
+            <input type="text" name="nombreGrupo" placeholder="Nombre del grupo" required class="forCampo">
+            <button type="submit" class="crear">Crear</button>
+        </form>
+    </div>
+</div>
+
+        
+
+    {% endif %}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Función para mostrar el formulario al crear un grupo
+            window.mostrarFormulario = function() {
+                let btn = document.getElementById("btnCrearGrupo");
+                let form = document.getElementById("formGrupo");
+                btn.style.visibility = "hidden";
+                btn.style.position = "absolute";
+                form.style.display = "block";
+            };
+
+            // Función para copiar el código del grupo al portapapeles
+            window.copiarCodigo = function() {
+                var codigo = document.getElementById("codigo-grupo").textContent;
+                var textarea = document.createElement("textarea");
+                textarea.value = codigo;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+                alert("Código copiado al portapapeles");
+            };
+
+            // Función para editar el nombre del grupo
+            const editarBtn = document.getElementById('editar-btn');
+            const inputTitulo = document.getElementById('input-titulo');
+            const guardarBtn = document.getElementById('guardar-btn');
+            const grupoTitulo = document.getElementById('grupo-titulo');
+
+            editarBtn.addEventListener('click', function() {
+                inputTitulo.style.display = 'block';
+                guardarBtn.style.display = 'inline-block';
+                grupoTitulo.style.display = 'none';
+                editarBtn.style.display = 'none';
+            });
+
+            guardarBtn.addEventListener('click', function() {
+                const nuevoTitulo = inputTitulo.value;
+                if (nuevoTitulo) {
+                    // Enviar la solicitud al servidor para actualizar el título del grupo
+                    fetch('/actualizarTitulo', {
+                        method: 'POST',
+                        body: JSON.stringify({ titulo: nuevoTitulo }),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Actualizar el título en la vista
+                            grupoTitulo.textContent = nuevoTitulo;
+                            inputTitulo.style.display = 'none';
+                            guardarBtn.style.display = 'none';
+                            grupoTitulo.style.display = 'inline';
+                            editarBtn.style.display = 'inline-block';
+                            alert("Grupo actualizado exitosamente");
+                        } else {
+                            alert(data.error || "Error al actualizar el grupo");
+                        }
+                    })
+                    .catch(error => {
+                        alert("Hubo un error al actualizar el grupo");
+                    });
+                }
+            });
+
+            // Función para eliminar el grupo
+            const eliminarBtn = document.getElementById('eliminar-btn');
+
+            eliminarBtn.addEventListener('click', function() {
+                const confirmation = confirm("¿Estás seguro de que quieres eliminar este grupo?");
+                if (confirmation) {
+                    // Enviar la solicitud al servidor para eliminar el grupo
+                    fetch('/eliminarGrupo', {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert("Grupo eliminado exitosamente");
+                            location.reload();  // Recargar la página para reflejar los cambios
+                        } else {
+                            alert("Hubo un error al eliminar el grupo");
+                        }
+                    })
+                    .catch(error => {
+                        alert("Hubo un error al eliminar el grupo");
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script src="/static/js/docente.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios del maestro</title>
+  <link rel="icon" href="/static/img/iconos/1.png" type="image/png">
+  <link rel="stylesheet" href="../../static/styles/ejerciciosAlumnos.css" type="text/css">
+</head>
+<body>
+  <div class="cuerpo">
+    <!-- Botón Regresar en esquina superior izquierda -->
+    <button class="back-btn" onclick="window.location.href='{{ url_for('alumno') }}'">
+      <span class="arrow-icon">&#10094;</span>
+      <b>Regresar</b>
+    </button>
+
+    <p id="titulo">Ejercicios propuestos por el docente</p>
+
+    <div class="ejercicios">
+      {% for titulo in ejercicios %}
+      <div class="ejercicio">
+        <a href="/ejercicio?id={{titulo[1]}}">
+          <p>{{titulo[0]}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

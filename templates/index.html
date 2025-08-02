@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Principal</title>
+  <link rel="icon" href="/static/img/iconos/B.png" type="image/png">
+  <link rel="stylesheet" href="../static/styles/principal.css" type="text/css"/>
+  <link rel="stylesheet" href="../static/styles/msj.css" type="text/css"/>
+</head>
+<body>
+
+  <!-- HEADER / MENÚ FIJO -->
+  <header>
+    <nav>
+      <!-- Lista de navegación centrada -->
+      <ul class="nav-list">
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#faq">PREGUNTAS FRECUENTES</a></li>
+        <li><a href="#contacto">CONTACTANOS</a></li>
+      </ul>
+      <a href="{{ url_for('sesion') }}" class="btn-sesion" id="linkModal">Iniciar sesión</a>
+      <!--
+      <script src="../static/js/msj.js"></script>
+      <script>
+        document.getElementById("linkModal").addEventListener("click", function(event) {
+          event.preventDefault();
+          mensaje("Este es el mensaje de la alerta.", this.href);
+        });
+      </script>
+      -->
+    </nav>
+  </header>
+
+  <!-- SECCIÓN DE INICIO (HERO) -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-text">
+      <h1>Prototipo de aplicación web empleando reconocimiento de voz</h1>
+      <p>
+        Prototipo de aplicación web interactiva que les permite a los más 
+        pequeños descubrir el mundo de las letras y los dígitos con su voz.
+      </p>
+    </div>
+    <div class="hero-image">
+      <!-- Ajusta la ruta de la imagen a tu carpeta -->
+      <img src="../static/img/principal/menu.png" alt="Cubos con letras y números" />
+    </div>
+  </section>
+
+  <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="faq-section">
+    <div class="faq-illustration">
+      <img src="../static/img/principal/preguntas.png" alt="Ilustración FAQ" />
+    </div>
+
+    <!-- Contenido (Título + Acordeón) a la derecha -->
+    <div class="faq-content">
+      <h2>Preguntas Frecuentes</h2>
+      <script src="../static/js/faq.js"></script>
+      <!-- Ítem 1 (abierto por defecto con la clase 'active') -->
+      <div class="faq-item active">
+        <button class="faq-question">
+          ¿Cómo funciona el prototipo de aplicación web?
+        </button>
+        <div class="faq-answer">
+          <p>
+            El prototipo permite a los niños practicar la pronunciación de letras y dígitos mediante reconocimiento de voz. A través de una interfaz amigable y colorida, los menores interactúan con ejercicios diseñados especialmente para su edad. 
+          </p>
+        </div>
+      </div>
+
+      <!-- Ítem 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Qué edades son adecuadas para usar el prototipo de aplicación web?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Está dirigido a niñas y niños de segundo grado de preescolar, aproximadamente entre 4 y 5 años. No está recomendado para menores con necesidades educativas especiales, ya que no cuenta con adaptaciones específicas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ítem 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cómo puedo crear una cuenta como docente?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Para crear una cuenta como docente, es necesario ponerse en contacto con un administrador del sistema. Él se encargará de darte de alta y proporcionarte tus credenciales de acceso. 
+          </p>
+        </div>
+      </div>
+
+      <!-- Ítem 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cómo puedo visualizar el progreso de mi hijo en el prototipo?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Como tutor, tendrás acceso a un panel en el que se muestra el progreso de tu hijo. Ahí podrás ver el desempeño en cada actividad, los intentos realizados y el avance general en el reconocimiento de letras y dígitos. Esta información se presenta de forma clara y sencilla para facilitar el acompañamiento en casa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONTACTO -->
+  <section id="contacto" class="contacto-section">
+    <div class="encabezado-contacto">
+      <h2>Contáctanos</h2>
+      <p>¿Alguna pregunta o comentario? ¡Solo escríbenos un mensaje!</p>
+    </div>
+    <div class="contacto-contenido">
+      <div class="text-block">
+        <h2>Contáctanos Ya!</h2>
+        <form action="contacto" method="POST">
+          <input type="text" name="nombre" placeholder="Nombre *" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="telefono" placeholder="Número telefónico *" required>
+          <textarea name="mensaje" rows="5" placeholder="Mensaje *" required></textarea>
+          <button type="submit">ENVIAR</button>
+        </form>
+      </div>
+      <div class="imagen-contacto">
+        <img src="../static/img/principal/contacto.png" alt="Imagen de contacto" />
+      </div>
+    </div>
+  </section>
+  
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Crea una cuenta para el alumno</title>
+
+  <link rel="stylesheet" href="../../static/styles/crearCuenta.css" type="text/css">
+  <link rel="icon" href="../../static/img/iconos/F.png" type="image/png">
+
+  <!-- Estilos para mensajes -->
+  <style>
+    .alert-message {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #e0f7fa;
+      color: #00796b;
+      border-left: 5px solid #00796b;
+      font-weight: bold;
+      border-radius: 5px;
+      animation: fadeOut 0.5s ease-out forwards;
+      animation-delay: 5s;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenedor principal (2 columnas al 50%) -->
+  <div class="crearCuenta-container">
+    
+    <!-- Columna Izquierda (imagen al 50%) -->
+    <div class="image-side"></div>
+
+    <!-- Columna Derecha (formulario al 50%) -->
+    <div class="form-side">
+      <div class="form-content">
+        <h1>Crea una cuenta para el alumno</h1>
+
+        <!-- Aquí se muestra el mensaje si existe -->
+        {% if message %}
+          <div class="alert-message" id="alert-message">
+            {{ message }}
+          </div>
+        {% endif %}
+
+        <form action="/crearAlumno" method="post">
+          <!-- Nombre(s) -->
+          <div class="form-group">
+            <label for="nombre">Nombre(s)*</label>
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                placeholder="Escribe el/los nombres" 
+                required
+              >
+            </div>
+          </div>
+
+          <!-- Apellido(s) -->
+          <div class="form-group">
+            <label for="apellido">Apellido(s)*</label>
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="apellido" 
+                name="apellido" 
+                placeholder="Escribe el/los apellidos" 
+                required
+              >
+            </div>
+          </div>
+
+          <!-- Correo -->
+          <div class="form-group">
+            <label for="correo">Email*</label>
+            <div class="input-container">
+              <input 
+                type="email" 
+                id="correo" 
+                name="correo" 
+                placeholder="Escribe tu correo"
+                required
+              >
+            </div>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="form-group">
+            <label for="contraseña">Contraseña*</label>
+            <div class="input-container password-container">
+              <input 
+                type="password" 
+                id="contraseña" 
+                name="contraseña" 
+                placeholder="Escribe tu contraseña"
+                minlength="8"
+                required
+              >
+              <span 
+                class="toggle-icon"
+                onmousedown="showPassword()" 
+                onmouseup="hidePassword()"
+                onmouseleave="hidePassword()"
+              >
+                <img src="../../static/img/crearCuenta/ojo.png" alt="Ojo">
+              </span>
+            </div>
+          </div>
+
+          <!-- Recomendación sobre la contraseña -->
+          <p class="instrucciones">
+            Utilice 8 o más caracteres con una combinación de letras, números y símbolos
+          </p>
+
+          <!-- Checkbox -->
+          <div class="checkbox-group">
+            <input 
+              type="checkbox" 
+              id="remember-me" 
+              name="remember-me"
+              required
+            >
+            <label for="remember-me">
+              Los datos almacenados en este prototipo se utilizarán únicamente para probar la funcionalidad de la aplicación. Estos datos serán eliminados una vez finalizadas las pruebas y no se usarán para ningún otro fin. Al participar, el usuario acepta estos términos.
+            </label>
+          </div>
+
+          <!-- Botón Crear -->
+          <button type="submit" class="btn">Crear</button>
+        </form>
+
+        <!-- Enlace a iniciar sesión -->
+        <p class="already-account">
+          ¿Ya tienes una cuenta? 
+          <a href="{{ url_for('sesion') }}">Inicia sesión</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para mostrar/ocultar contraseña -->
+  <script>
+    function showPassword() {
+      document.getElementById('contraseña').type = 'text';
+    }
+    function hidePassword() {
+      document.getElementById('contraseña').type = 'password';
+    }
+
+    // Script para ocultar mensaje después de 5 segundos
+    setTimeout(function() {
+      var alert = document.getElementById('alert-message');
+      if (alert) {
+        alert.style.display = 'none';
+      }
+    }, 5000);
+  </script>
+</body>
+</html>

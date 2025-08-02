@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/img/concluir/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    border: 5px solid #3daff2;
+    border-radius: 25px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 360px;
+}
+
+.container h1 {
+    font-size: 22px;
+    color: #1e1e3f;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button img {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    padding: 10px;
+    border-radius: 20px;
+    transition: transform 0.2s ease;
+}
+
+button img:hover {
+    transform: scale(1.1);
+}
+
+/* ----------------------- */
+/* RESPONSIVE PARA CELULARES */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .container h1 {
+        font-size: 18px;
+    }
+
+    .container p {
+        font-size: 16px;
+    }
+
+    button img {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+    }
+}

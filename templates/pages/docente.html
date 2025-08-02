@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/styles/docente.css" type="text/css">
+    <link rel="icon" href="/static/img/iconos/6.png" type="image/png">
+    <title>Docente</title>
+</head>
+<body>
+    <!--  Menú horizontal superior -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Nombre del docente -->
+                <li class="nombre" id="nombreDocente"></li>
+                
+                <!-- Icono de configuración -->
+                <li>
+                    <a href="{{ url_for('confDocente') }}">
+                        <img src="/static/img/docente/tutorial.png" class="conf" alt="configuraciones">
+                    </a>
+                </li>
+                
+                <!-- Botón Cerrar sesión -->
+                <li class="cerrar">
+                    <a href="{{ url_for('index') }}" class="menu">Cerrar sesión</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--Para el texto principal de docente-->
+    <div class="textoPrincipal">
+        <h1>Pagina principal</h1>
+        <p>En este apartado podrás gestionar tu grupo, ver alumnos inscritos al grupo y ver el progreso</p>
+    </div>
+
+    {% include "grupo_info.html" %}
+
+    <script>
+        function mostrarFormulario() {
+            document.getElementById("formGrupo").style.display = "block";  // Mostrar el formulario
+            document.getElementById("mensajeNoGrupo").style.display = "none";  // Ocultar el mensaje y el botón
+        }
+    </script>
+
+    <script src="/static/js/docente.js"></script>
+</body>
+</html>

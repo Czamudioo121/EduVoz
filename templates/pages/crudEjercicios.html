@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRUD Ejercicios</title>
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="/static/styles/crudEjercicios.css" type="text/css">
+  <link rel="icon" href="/static/img/iconos/3.png" type="image/png">
+
+  <!-- Sortable.js para drag & drop -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <style>
+    .drag-handle {
+      cursor: move;
+      user-select: none;
+      text-align: center;
+      width: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Botón de regreso -->
+  <button class="back-btn" onclick="window.history.back()">&#10094; Regresar</button>
+
+  <div class="cuerpo">
+    <!-- Título del ejercicio -->
+    <label for="titulo">Ingrese un título para la actividad:</label>
+    <input type="text" name="titulo" id="titulo">
+
+    <br><br>
+
+    <!-- Selector de tipo -->
+    <label for="opciones">Elige una opción:</label>
+    <select id="opciones" onchange="mostrarFormulario()">
+      <option value="letra">Letras</option>
+      <option value="numero">Dígitos</option>
+    </select>
+
+    <!-- Formulario de letras -->
+    <form id="formLetra" style="display: none; margin-top: 20px;" onsubmit="agregarLetra(event)">
+      <label for="selectLetra">Escoja una letra:</label>
+      <select id="selectLetra">
+        <option value="">-- Letra --</option>
+        <option value="A">A</option>
+        <option value="a">a</option>
+        <option value="B">B</option>
+        <option value="b">b</option>
+        <option value="C">C</option>
+        <option value="c">c</option>
+        <option value="D">D</option>
+        <option value="d">d</option>
+        <option value="E">E</option>
+        <option value="e">e</option>
+        <option value="F">F</option>
+        <option value="f">f</option>
+        <option value="G">G</option>
+        <option value="g">g</option>
+        <option value="H">H</option>
+        <option value="h">h</option>
+        <option value="I">I</option>
+        <option value="i">i</option>
+        <option value="J">J</option>
+        <option value="j">j</option>
+        <option value="K">K</option>
+        <option value="k">k</option>
+        <option value="L">L</option>
+        <option value="l">l</option>
+        <option value="M">M</option>
+        <option value="m">m</option>
+        <option value="N">N</option>
+        <option value="n">n</option>
+        <option value="O">O</option>
+        <option value="o">o</option>
+        <option value="P">P</option>
+        <option value="p">p</option>
+        <option value="Q">Q</option>
+        <option value="q">q</option>
+        <option value="R">R</option>
+        <option value="r">r</option>
+        <option value="S">S</option>
+        <option value="s">s</option>
+        <option value="T">T</option>
+        <option value="t">t</option>
+        <option value="U">U</option>
+        <option value="u">u</option>
+        <option value="V">V</option>
+        <option value="v">v</option>
+        <option value="W">W</option>
+        <option value="w">w</option>
+        <option value="X">X</option>
+        <option value="x">x</option>
+        <option value="Y">Y</option>
+        <option value="y">y</option>
+        <option value="Z">Z</option>
+        <option value="z">z</option>
+      </select>
+      <button type="submit">Agregar</button>
+    </form>
+
+    <!-- Formulario de números -->
+    <form id="formNumero" style="display: none; margin-top: 20px;" onsubmit="agregarNumero(event)">
+      <label for="selectNumero">Escoja un dígito:</label>
+      <select id="selectNumero">
+        <option value="">-- Dígito --</option>
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+        <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button type="submit">Agregar</button>
+    </form>
+
+    <!-- Tabla de resultados -->
+    <table id="tablaValores" border="1" style="margin-top: 40px; border-collapse: collapse; width:100%;">
+      <thead>
+        <tr>
+          <th style="width:30px; text-align:center;">&nbsp;</th>
+          <th>Letra o Dígito seleccionado</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla">
+        <!-- Filas generadas dinámicamente -->
+      </tbody>
+    </table>
+
+    <!-- Botón subir ejercicio -->
+    <button onclick="subirEjercicio('{{ correo_docente }}')" class="subireje" style="margin-top: 20px;">
+      Subir ejercicio
+    </button>
+  </div> <!-- /.cuerpo -->
+
+  <!-- JavaScript -->
+  <script>
+    function mostrarFormulario() {
+      const valor = document.getElementById("opciones").value;
+      document.getElementById("formLetra").style.display = "none";
+      document.getElementById("formNumero").style.display = "none";
+      if (valor === "letra") {
+        document.getElementById("formLetra").style.display = "block";
+      } else if (valor === "numero") {
+        document.getElementById("formNumero").style.display = "block";
+      }
+    }
+
+    function agregarLetra(event) {
+      event.preventDefault();
+      const letra = document.getElementById("selectLetra").value;
+      if (letra) {
+        agregarFilaATabla(letra);
+        document.getElementById("selectLetra").value = "";
+      }
+    }
+
+    function agregarNumero(event) {
+      event.preventDefault();
+      const numero = document.getElementById("selectNumero").value;
+      if (numero) {
+        agregarFilaATabla(numero);
+        document.getElementById("selectNumero").value = "";
+      }
+    }
+
+    function agregarFilaATabla(valor) {
+      const tabla = document.getElementById("cuerpoTabla");
+      const fila = document.createElement("tr");
+
+      // 1) Drag-handle
+      const celdaHandle = document.createElement("td");
+      celdaHandle.className = "drag-handle";
+      celdaHandle.innerHTML = "&#9776;"; // ☰
+      fila.appendChild(celdaHandle);
+
+      // 2) Valor
+      const celdaValor = document.createElement("td");
+      celdaValor.textContent = valor;
+      fila.appendChild(celdaValor);
+
+      // 3) Eliminar
+      const celdaEliminar = document.createElement("td");
+      const botonEliminar = document.createElement("button");
+      botonEliminar.textContent = "Eliminar";
+      botonEliminar.onclick = () => tabla.removeChild(fila);
+      celdaEliminar.appendChild(botonEliminar);
+      fila.appendChild(celdaEliminar);
+
+      tabla.appendChild(fila);
+    }
+
+    function subirEjercicio(correo_docente) {
+      const titulo = document.getElementById("titulo").value.trim();
+      const filas = document.querySelectorAll("#cuerpoTabla tr");
+      const valores = [];
+
+      if (!titulo) {
+        alert("Por favor, ingresa un título para el ejercicio.");
+        return;
+      }
+      if (filas.length === 0) {
+        alert("Agrega al menos un valor antes de subir el ejercicio.");
+        return;
+      }
+
+      filas.forEach(fila => {
+        valores.push(fila.querySelectorAll("td")[1].textContent);
+      });
+
+      fetch("/subir-ejercicio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          correo: correo_docente,
+          titulo: titulo,
+          valores: valores
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("Ejercicio subido correctamente");
+        document.getElementById("titulo").value = "";
+        document.getElementById("cuerpoTabla").innerHTML = "";
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Hubo un error al enviar el ejercicio.");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      mostrarFormulario();
+      new Sortable(document.getElementById("cuerpoTabla"), {
+        handle: ".drag-handle",
+        animation: 150
+      });
+    });
+  </script>
+
+  <script src="{{ url_for('static', filename='js/mostrarCrudPreguntas.js') }}"></script>
+</body>
+</html>

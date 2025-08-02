@@ -1,0 +1,289 @@
+/* ============================
+   RESETEO BÁSICO
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  body {
+    background-color: #f4f4f4;
+  }
+  
+  /* ============================
+     CONTENEDOR PRINCIPAL
+  ============================ */
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* ============================
+     SIDEBAR
+  ============================ */
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    width: 280px;       /* Ancho total de la sidebar */
+    min-width: 280px;
+    border-right: 1px solid #ccc; /* Línea divisoria gris a la derecha */
+  }
+  
+  /* Columna naranja (con engrane) */
+  .orange-bar {
+    width: 60px;              /* Ancho fijo de la franja naranja */
+    background-color: #fab26a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;        /* Espacio arriba */
+    border-right: 1px solid #ccc; /* Línea divisoria entre naranja y blanco */
+  }
+  .gear-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #ff7e05;
+    border-radius: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;      /* Espacio entre el engrane y el botón */
+  }
+  .gear-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .back-btn {
+    display: inline-flex;        /* Alineación horizontal del ícono + texto */
+    align-items: center;         /* Centra verticalmente flecha y texto */
+    gap: 6px;                    /* Espacio entre flecha y texto */
+    background: none;
+    border: none;
+    color: #000;                 /* Color de texto */
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;         /* Separación inferior */
+  }
+  
+  .arrow-icon {
+    font-size: 18px;             /* Tamaño de la flecha */
+    font-weight: bold;           /* Que se vea más gruesa */
+    margin-bottom: 30px; 
+    transform: translateY(14px);
+  }
+  
+  .back-btn:hover {
+    color: #000;                 /* Cambia a negro al pasar el mouse */
+  }
+  
+  /* Columna blanca dentro de la sidebar */
+  .white-col {
+    flex: 1;  /* Ocupa el resto del ancho de la sidebar */
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* Menú lateral */
+  .sidebar-menu {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .sidebar-menu li {
+    margin-bottom: 15px;
+  }
+  
+  /* Ítems del menú */
+  .sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* Espacio entre el ícono y el texto */
+    text-decoration: none;
+    color: #000;           /* Ítems en color negro */
+    font-size: 16px;
+    transition: color 0.2s, background-color 0.2s;
+    padding: 4px;
+    border-radius: 5px;
+  }
+  .sidebar-menu li a:hover {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Imágenes del menú */
+  .menu-icon {
+    width: 18px;  /* Ajusta el ancho del ícono */
+    height: auto;
+  }
+  
+  /* ============================
+     CONTENIDO PRINCIPAL
+  ============================ */
+  /* Contenedor principal centrado y con ancho máximo */
+  .main-content {
+    width: 80%;            /* Ocupa el 80% del ancho de la ventana */
+    max-width: 1000px;     /* Máximo de 1000px para pantallas grandes */
+    margin: 0 auto;        /* Centra horizontalmente */
+    padding: 40px;         /* Separación interna */
+    background-color: #fff; /* Fondo blanco */
+  }
+  
+  /* Encabezado (título y descripción) */
+  .header {
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .header p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Contenedor para foto y formulario (lado a lado) */
+  .profile-container {
+    display: flex;
+    gap: 40px;            /* Espacio horizontal entre foto y formulario */
+    align-items: center;  /* Alinea verticalmente al centro */
+  }
+  
+  /* Sección de la foto */
+  .profile-photo {
+    text-align: center;   /* Centra la imagen y el botón */
+  }
+  .profile-img {
+    width: 130px;         /* Ajusta el tamaño de la foto */
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;       /* Centra la imagen dentro de .profile-photo */
+  }
+  .change-photo-btn {
+    margin-top: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff7e05; /* Naranja */
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  /* Formulario */
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;            /* Espacio vertical entre cada campo */
+  }
+  .profile-form label {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .profile-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 600px;
+  }
+  .update-profile-btn {
+    margin-top: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff7e05; /* Mismo color que "Cambiar foto" */
+    color: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    width: fit-content;
+  }
+  
+  /* Sección de contacto */
+  .contact-box {
+    background-color: #f9f9f9;  /* Fondo claro */
+    border: 1px solid #ddd;    /* Borde suave */
+    padding: 20px;             /* Espacio interno */
+    margin-top: 20px;          /* Separación respecto al título */
+    border-radius: 5px;        /* Bordes ligeramente redondeados */
+  }
+  .contact-box p {
+    margin-bottom: 10px;       /* Separación entre párrafos */
+    line-height: 1.5;          /* Altura de línea agradable */
+  }
+  .contact-box a {
+    color: #007BFF;            /* Color de enlace */
+    text-decoration: none;     /* Quitar subrayado */
+  }
+  .contact-box a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+  }
+  
+  /* ============================
+   MEDIA QUERIES (RESPONSIVIDAD)
+============================ */
+@media (max-width: 768px) {
+  /* Apilar la estructura principal en columna */
+  .container {
+    flex-direction: column;
+  }
+  
+  /* Sidebar: ocupar 100% del ancho, reorganizar sus columnas */
+  .sidebar {
+    width: 100%;
+    min-width: auto;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* La franja naranja se mantiene fija, pero se ajusta el padding */
+  .orange-bar {
+    width: 60px;
+    padding-top: 10px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* La columna blanca ocupa el resto y se reduce el padding */
+  .white-col {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  /* El contenido principal ocupa el 100% del ancho y reduce su padding */
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* En la sección de perfil, apilar foto y formulario verticalmente */
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Ajustar la foto de perfil (puedes modificar el tamaño si lo deseas) */
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Hacer que los inputs del formulario ocupen el 100% del contenedor */
+  .profile-form input {
+    width: 100%;
+    max-width: 100%;
+  }
+}

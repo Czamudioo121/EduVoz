@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/listaAlumnos.css" type="text/css">
+    <link rel="icon" href="/static/img/iconos/D.png" type="image/png">
+    <title>Lista de alumnos</title>
+</head>
+<body>
+
+    <!-- Botón de regreso -->
+    <a href="javascript:history.back()" class="regresar">
+        &#10094; Regresar
+    </a>    
+
+    <div class="todo">
+        <div class="contenido">
+            <h1>Lista de alumnos</h1>
+            <p>A continuación te mostramos un listado de alumnos que se encuentran inscritos en tu grupo</p>
+        
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th class="alumno">Alumno</th>
+                        <th class="correo">Correo</th>
+                        <th class="progreso">Progreso</th>
+                        <th class="baja">Dar de baja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alumno in alumnos %}
+                    <tr>
+                        <td>{{ alumno.Nombre }}</td>
+                        <td>{{ alumno.CorreoTutor }}</td>
+                        <td>
+                            <a href="{{ url_for('progresoAlumnoDocente') }}?correo_alumno={{ alumno.CorreoTutor }}" class="btn-progreso">
+                                Ver Progreso
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ url_for('dar_de_baja', correo_alumno=alumno.CorreoTutor) }}" class="btn-baja">
+                                Dar de baja
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4">No hay alumnos inscritos en tu grupo.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

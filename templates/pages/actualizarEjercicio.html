@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="/static/styles/crudEjercicios.css" type="text/css" />
+  <link rel="icon" href="/static/img/iconos/8.png" type="image/png" />
+  <title>CRUD Ejercicios</title>
+
+  <style>
+  /* ============= RESET BÁSICO ============= */
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html,body{
+    width:100%;height:100%;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:#37ABE4;color:#102a43;
+    display:flex;justify-content:center;align-items:flex-start;
+    padding-top:10px;
+  }
+
+  /* ---------- Botón regresar ---------- */
+  .back-btn{
+    position:fixed;top:16px;left:16px;z-index:1000;
+    background:#2f80ed;color:#fff;border:none;border-radius:4px;
+    padding:8px 12px;font-size:14px;font-weight:bold;
+    cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15);
+    transition:background-color .2s;
+  }
+  .back-btn:hover{background:#1366d6;}
+
+  /* ---------- Contenedor principal ---------- */
+  .cuerpo{
+    background:#fff;width:450px;max-width:90%;
+    border-radius:12px;box-shadow:0 8px 24px rgba(16,42,67,.12);
+    padding:24px;text-align:center;position:relative;
+  }
+
+  /* ---------- Inputs y selects ---------- */
+  label[for="titulo"]{font-size:18px;font-weight:600;display:block;margin-bottom:8px;}
+  #titulo{
+    width:100%;padding:10px 12px;border:1px solid #bcccdc;border-radius:6px;
+    font-size:16px;margin-bottom:20px;transition:border-color .2s;
+  }
+  #titulo:focus{outline:none;border-color:#486581;}
+
+  label[for="opciones"]{font-size:16px;font-weight:500;}
+  #opciones{
+    width:100%;padding:8px 10px;border:1px solid #bcccdc;border-radius:6px;
+    margin:8px 0 20px;font-size:16px;
+  }
+
+  /* ---------- Formularios letra/número ---------- */
+  form{
+    background:#f0f4f8;border-radius:8px;padding:16px;margin-bottom:24px;
+    box-shadow:0 4px 12px rgba(16,42,67,.08);
+  }
+  form label{font-size:14px;font-weight:500;display:block;margin-bottom:6px;}
+  form select{
+    width:100%;padding:8px 10px;border:1px solid #bcccdc;border-radius:6px;
+    font-size:16px;margin-bottom:12px;
+  }
+  form button{
+    background:#2f80ed;color:#fff;border:none;border-radius:6px;
+    padding:10px 16px;font-size:16px;cursor:pointer;transition:background-color .2s;
+  }
+  form button:hover{background:#1366d6;}
+
+  /* ---------- Tabla resultados ---------- */
+  #tablaValores{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:15px;}
+  #tablaValores th,#tablaValores td{
+    padding:12px 8px;text-align:center;border-bottom:1px solid #d9e2ec;
+  }
+  #tablaValores th{background:#f0f4f8;font-weight:600;}
+  #tablaValores tr:nth-child(even){background:#fafbfc;}
+  #tablaValores button{
+    background:#ff6b6b;color:#fff;border:none;border-radius:4px;
+    padding:6px 10px;font-size:14px;cursor:pointer;transition:background-color .2s;
+  }
+  #tablaValores button:hover{background:#e55050;}
+
+  /* ---------- Ícono “hamburguesa” (handle) ---------- */
+  .handle,.handle-column{width:32px;text-align:center;}
+  .handle{
+    cursor:grab;user-select:none;font-size:20px;
+  }
+  .handle:active{cursor:grabbing;}
+
+  /* ---------- Botón subir/actualizar ---------- */
+  .subireje{
+    background:#27ae60;color:#fff;border:none;border-radius:6px;
+    padding:12px 24px;font-size:16px;cursor:pointer;transition:background-color .2s;
+    margin-bottom:40px;
+  }
+  .subireje:hover{background:#1e874b;}
+
+  /* ---------- Drag feedback ---------- */
+  #cuerpoTabla tr{cursor:move;}
+
+  /* ---------- BREAKPOINTS ---------- */
+  @media (max-width:500px){
+    html,body{padding-top:20px;}
+    .cuerpo{width:90%;padding:16px;}
+    #titulo,#opciones,form select{font-size:14px;}
+    form button,body>button{font-size:14px;padding:8px 12px;}
+    #tablaValores th,#tablaValores td{padding:8px 4px;font-size:14px;}
+  }
+  </style>
+</head>
+
+<body>
+  <!-- Botón de regreso -->
+  <button class="back-btn" onclick="window.history.back()">&#10094; Regresar</button>
+
+  <!-- Contenedor principal -->
+  <div class="cuerpo">
+    <label for="titulo">Título de la actividad:</label>
+    <input type="text" name="titulo" id="titulo" value="{{ ejercicio[1] }}" />
+
+    <!-- Selector tipo -->
+    <label for="opciones">Elige una opción:</label>
+    <select id="opciones" class="form-select" onchange="mostrarFormulario()">
+      <option value="">Opciones</option>
+      <option value="letra">Letras</option>
+      <option value="numero">Dígitos</option>
+    </select>
+
+    <!-- Formulario de letras -->
+    <form id="formLetra" class="formulario" onsubmit="agregarLetra(event)" style="display:none;">
+      <label for="selectLetra">Escoja una letra:</label>
+      <select id="selectLetra" class="form-select">
+        <option value="">Opciones</option>
+        {% for l in 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz' %}
+        <option value="{{ l }}">{{ l }}</option>{% endfor %}
+      </select>
+      <button type="submit" class="btn-accion">Agregar</button>
+    </form>
+
+    <!-- Formulario de números -->
+    <form id="formNumero" class="formulario" onsubmit="agregarNumero(event)" style="display:none;">
+      <label for="selectNumero">Escoja un dígito:</label>
+      <select id="selectNumero" class="form-select">
+        <option value="">Opciones</option>
+        {% for n in range(1,11) %}
+        <option value="{{ n }}">{{ n }}</option>{% endfor %}
+      </select>
+      <button type="submit" class="btn-accion">Agregar</button>
+    </form>
+
+    <!-- Tabla resultados -->
+    <table id="tablaValores" class="tabla-resultados">
+      <thead>
+        <tr>
+          <th class="handle-column"></th>
+          <th>Letra o Dígito seleccionado</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla"><!-- filas dinámicas --></tbody>
+    </table>
+
+    <!-- Botón actualizar -->
+    <button onclick="actualizarEjercicio('{{ ejercicio[0] }}')" class="subireje">Actualizar ejercicio</button>
+  </div><!-- ./cuerpo -->
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+  /* ---------- Drag-and-drop básico ---------- */
+  let draggedRow = null;
+  const cuerpoTabla = document.getElementById('cuerpoTabla');
+
+  function prepararFilaParaDrag(fila){
+    fila.setAttribute('draggable','true');
+    fila.addEventListener('dragstart',e=>{
+      draggedRow = fila;
+      fila.classList.add('dragging');
+    });
+    fila.addEventListener('dragend',e=>{
+      fila.classList.remove('dragging');
+      draggedRow=null;
+    });
+  }
+
+  cuerpoTabla.addEventListener('dragover',e=>{
+    e.preventDefault();
+    const after = getDragAfterElement(cuerpoTabla,e.clientY);
+    if(!after){cuerpoTabla.appendChild(draggedRow);}
+    else{cuerpoTabla.insertBefore(draggedRow,after);}
+  });
+
+  function getDragAfterElement(container,y){
+    const rows=[...container.querySelectorAll('tr:not(.dragging)')];
+    return rows.reduce((closest,row)=>{
+      const box=row.getBoundingClientRect();
+      const offset=y-box.top-box.height/2;
+      if(offset<0 && offset>closest.offset){
+        return {offset:offset,element:row};
+      }else{return closest;}
+    },{offset:Number.NEGATIVE_INFINITY}).element;
+  }
+
+  /* ---------- Añadir fila con handle ---------- */
+  function agregarFilaATabla(valor){
+    const fila=document.createElement('tr');
+
+    /* Celda handle */
+    const cHandle=document.createElement('td');
+    cHandle.className='handle';
+    cHandle.innerHTML='&#9776;';
+    fila.appendChild(cHandle);
+
+    /* Celda valor */
+    const cValor=document.createElement('td');
+    cValor.textContent=valor;
+    cValor.style.textAlign='center';
+    fila.appendChild(cValor);
+
+    /* Celda eliminar */
+    const cEliminar=document.createElement('td');
+    cEliminar.style.textAlign='center';
+    const btn=document.createElement('button');
+    btn.textContent='Eliminar';
+    btn.style='background-color:#f66;border:none;padding:5px 10px;border-radius:5px;';
+    btn.onclick=()=>fila.remove();
+    cEliminar.appendChild(btn);
+    fila.appendChild(cEliminar);
+
+    prepararFilaParaDrag(fila);
+    cuerpoTabla.appendChild(fila);
+  }
+
+  /* ---------- Helpers formularios ---------- */
+  function mostrarFormulario(){
+    const v=document.getElementById('opciones').value;
+    document.getElementById('formLetra').style.display='none';
+    document.getElementById('formNumero').style.display='none';
+    if(v==='letra')      document.getElementById('formLetra').style.display='block';
+    else if(v==='numero')document.getElementById('formNumero').style.display='block';
+  }
+
+  function agregarLetra(e){
+    e.preventDefault();
+    const letra=document.getElementById('selectLetra').value;
+    if(letra){agregarFilaATabla(letra);document.getElementById('selectLetra').value='';}
+  }
+
+  function agregarNumero(e){
+    e.preventDefault();
+    const n=document.getElementById('selectNumero').value;
+    if(n){agregarFilaATabla(n);document.getElementById('selectNumero').value='';}
+  }
+
+  /* ---------- Subir / actualizar ---------- */
+  function subirEjercicio(correo){
+    const titulo=document.getElementById('titulo').value.trim();
+    const filas=[...document.querySelectorAll('#cuerpoTabla tr')];
+    if(!titulo){alert('Ingresa un título');return;}
+    if(!filas.length){alert('Agrega al menos un valor');return;}
+
+    const valores=filas.map(f=>f.querySelectorAll('td')[1].textContent);
+
+    fetch('/subir-ejercicio',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({correo:correo,titulo:titulo,valores:valores})
+    })
+    .then(r=>r.json())
+    .then(d=>{
+      alert('Ejercicio subido');console.log(d);
+      document.getElementById('titulo').value='';
+      cuerpoTabla.innerHTML='';
+    })
+    .catch(err=>{console.error(err);alert('Error al subir');});
+  }
+
+  function actualizarEjercicio(id){
+    const titulo=document.getElementById('titulo').value.trim();
+    const filas=[...document.querySelectorAll('#cuerpoTabla tr')];
+    if(!titulo){alert('Ingresa un título');return;}
+    if(!filas.length){alert('Agrega al menos un valor');return;}
+
+    const valores=filas.map(f=>f.querySelectorAll('td')[1].textContent);
+
+    fetch('/actualizar-ejercicio',{
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id:id,titulo:titulo,valores:valores})
+    })
+    .then(r=>r.json())
+    .then(d=>{alert('Ejercicio actualizado');console.log(d);})
+    .catch(err=>{console.error(err);alert('Error al actualizar');});
+  }
+
+  /* ---------- Cargar datos iniciales ---------- */
+  const respuesta={{ respuesta | tojson }};
+  respuesta.forEach(v=>agregarFilaATabla(v));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/conf.css') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <!-- Columna naranja -->
+      <div class="orange-bar">
+        <div class="gear-circle">
+          <img src="/static/img/conf/gear.png" alt="Engrane" class="gear-icon">
+        </div>
+      </div>
+      <!-- Columna blanca -->
+      <div class="white-col">
+        <!-- Botón "Regresar" en la misma columna que los botones -->
+        <button class="back-btn" onclick="window.location.href='{{ url_for('alumno') }}'">
+        <span class="arrow-icon">&#10094;</span>
+        <b>Regresar</b>
+        </button>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#" id="editar-perfil-btn" class="active">
+              <img src="/static/img/conf/Edit.png" alt="Editar perfil" class="menu-icon">
+              Editar perfil
+            </a>
+          </li>
+          <li>
+            <a href="#" id="contactar-docente-btn">
+              <img src="/static/img/conf/Contact.png" alt="Contacta al docente" class="menu-icon">
+              Contacta al docente
+            </a>
+          </li>
+          <li>
+            <a href="#" id="videos-tutoriales-btn">
+              <img src="/static/img/conf/Help.png" alt="Videos tutoriales" class="menu-icon">
+              Videos tutoriales
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-content" id="main-content">
+      <div class="header">
+        <h1>Editar perfil</h1>
+        <p>Cambia la foto de perfil de tu hijo y edita su información personal.</p>
+      </div>
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img id="profile-img" src="{{ alumno.Foto }}" alt="Foto de perfil" class="profile-img">
+          <button type="button" class="change-photo-btn" onclick="document.getElementById('foto').click();">
+            Cambiar foto
+          </button>
+          <!-- Formulario para cambiar la foto (oculto) -->
+          <form id="foto-form" enctype="multipart/form-data" style="display: none;">
+            <input type="file" id="foto" name="foto" accept="image/*" required>
+            <input type="hidden" id="CorreoTutor" name="CorreoTutor" value="{{ alumno.CorreoTutor }}">
+          </form>
+        </div>
+        <form class="profile-form" action="/editar_perfil" method="POST">
+          <label for="nombre">Nombres(s)</label>
+          <input type="text" id="nombre" name="nombre" placeholder="{{ alumno['Nombre'] }}" required>
+          <label for="apellido">Apellidos</label>
+          <input type="text" id="apellido" name="apellido" placeholder="{{ alumno['Apellido'] }}" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="{{ alumno['CorreoTutor'] }}" required>
+          <button type="submit" class="update-profile-btn">Actualizar perfil</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery y scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Función para subir la foto sin recargar la página
+    $('#foto').change(function() {
+      var correoTutor = $('#CorreoTutor').val();
+      var formData = new FormData($('#foto-form')[0]);
+      formData.append('CorreoTutor', correoTutor);
+      $.ajax({
+        url: '/cambiar_foto',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+          if (response.foto) {
+            $('#profile-img').attr('src', 'static/usuarios/' + response.foto);
+          } else {
+            alert('Error al subir la foto');
+          }
+        },
+        error: function(xhr, status, error) {
+          alert('Error al cambiar la foto: ' + xhr.responseJSON.error);
+        }
+      });
+    });
+
+    // Funcionalidad para cambiar el contenido principal
+    const editarPerfilBtn = document.getElementById('editar-perfil-btn');
+    const contactarDocenteBtn = document.getElementById('contactar-docente-btn');
+    const videosTutorialesBtn = document.getElementById('videos-tutoriales-btn');
+    const mainContent = document.getElementById('main-content');
+
+    function changeContent(content) {
+      mainContent.innerHTML = content;
+    }
+
+    editarPerfilBtn.addEventListener('click', function() {
+      const content = `
+        <div class="header">
+          <h1>Editar perfil</h1>
+          <p>Cambia la foto de perfil de tu hijo y edita su información personal.</p>
+        </div>
+        <div class="profile-container">
+          <div class="profile-photo">
+            <img src="{{ alumno.Foto }}" alt="Foto de perfil" class="profile-img">
+            <button type="button" class="change-photo-btn">Cambiar foto</button>
+          </div>
+          <form class="profile-form">
+            <label for="nombre">Nombres(s)</label>
+            <input type="text" id="nombre" name="nombre" placeholder="{{ alumno['Nombre'] }}" required>
+            <label for="apellido">Apellidos</label>
+            <input type="text" id="apellido" name="apellido" placeholder="{{ alumno['Apellido'] }}" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="{{ alumno['CorreoTutor'] }}" required>
+            <button type="submit" class="update-profile-btn">Actualizar perfil</button>
+          </form>
+        </div>
+      `;
+      changeContent(content);
+    });
+
+    contactarDocenteBtn.addEventListener('click', function() {
+      const content = `
+        <div class="contact-box">
+          <h1>Contacta al docente</h1>
+          <br>
+          <p>A continuación te proporcionamos los datos para comunicarte con el docente.</p>
+          <br>
+          <p>Nombre del docente: {{ docente['Nombre'] }} {{ docente['Apellido'] }}</p>
+          <p>Correo del docente: {{ docente['CorreoDocente'] }}</p>
+        </div>
+      `;
+      changeContent(content);
+    });
+
+    videosTutorialesBtn.addEventListener('click', function() {
+  const content = `
+    <div class="header">
+      <h1>Videos tutoriales</h1>
+      <br>
+      <p>A continuación te proporcionamos videos tutoriales del uso de la aplicación web:</p>
+      <br>
+      <ul>
+        <li>
+          <a 
+            href="https://youtu.be/9SSgh_dx_oE" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Tutorial para el estudiante
+          </a>
+        </li>
+        <br>
+        <li>
+          <a 
+            href="https://youtu.be/SPtxpDUNy84" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Tutorial para el tutor
+          </a>
+        </li>
+      </ul>
+    </div>
+  `;
+  changeContent(content);
+});
+  </script>
+</body>
+</html>

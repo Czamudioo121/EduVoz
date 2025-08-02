@@ -1,0 +1,174 @@
+/* Centrado de la pantalla */
+body {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  height: 100vh;           /* Ocupa toda la altura de la pantalla */
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.contenedor {
+  text-align: center;
+  background: white;
+  /* Aumentamos el padding para hacerlo más grande */
+  padding: 40px 60px; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+h1 {
+  font-size: 28px; /* Aumenta el tamaño para que luzca más */
+  margin: 0 0 15px; 
+  font-weight: bold;
+}
+
+/* Fuente personalizada para la letra */
+@font-face {
+  font-family: 'Chewy';
+  src: url('/static/fonts/Chewy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Letra grande */
+#letra {
+  /*font-family: Arial, sans-serif;*/
+  font-family: 'Arial', sans-serif;
+  font-size: 200px;     /* Ajusta el tamaño */
+  color: #D7263D;       /* Rojo vivo, por ejemplo */
+  margin: 0 0 20px;     /* Espacio inferior para separarla de los botones */
+}
+
+/* Número grande */
+#numero {
+  font-family: 'Arial', sans-serif; /* O la fuente que prefieras */
+  font-size: 200px;                   /* Ajusta el tamaño que quieras */
+  color: #D7263D;                     /* Color del número */
+  margin: 0 0 20px;                   /* Separación inferior */
+}
+
+/* Contenedor de los botones */
+.opciones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+/* Todos los botones comparten estas reglas */
+button {
+  border: none;
+  cursor: pointer;
+  width: 100px;  /* Botones de mayor tamaño */
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boto {
+  width: 100px; /* Ajusta el tamaño del icono */
+  height: auto;
+}
+
+.boton {
+  width: 70px; /* Ajusta el tamaño del icono */
+  height: auto;
+}
+
+/* Botón 1 (Salir) con fondo rojo */
+.btn-salir {
+  background-color: #f44336;
+}
+
+/* Botón 2 (Micrófono) con fondo naranja */
+.btn-micro {
+  background-color: #ff9800;
+  transition: background-color 0.5s ease;
+}
+
+/* Cuando esté activo se aplicará el fondo rojo */
+.btn-micro.active {
+  background-color: #ff0000; /* rojo */
+}
+
+/* Botón 3 (Recargar) con fondo azul */
+.btn-reload {
+  background-color: #2196f3;
+}
+
+/* Opcional: aclarar el ícono si es oscuro */
+button:hover .boton {
+  filter: brightness(0.9);
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  #letra,
+  #numero {
+    font-size: 150px;
+  }
+  button {
+    width: 80px;
+    height: 80px;
+  }
+  .boton {
+    width: 50px;
+    height: auto;
+  }
+  .opciones {
+    gap: 20px;
+  }
+
+  button img {
+    max-width: 90%;
+  }
+  .btn-salir .boto {
+    width: 90%;
+  }
+}
+
+/* Para pantallas de hasta 480px */
+@media (max-width: 480px) {
+  .contenedor {
+    padding: 20px 10px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  #letra,
+  #numero {
+    font-size: 120px;
+  }
+  button {
+    width: 60px;
+    height: 60px;
+  }
+  .boton {
+    width: 40px;
+    height: auto;
+  }
+  .opciones {
+    gap: 10px;
+  }
+
+  /* ICONO “SALIR” AÚN MÁS PEQUEÑO EN MÓVIL */
+  button img {
+    max-width: 120%;
+  }
+  .btn-salir .boto {
+    width: 120%;
+  }
+}
+
+
+

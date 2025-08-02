@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña</title>
+  <link rel="icon" href="/static/img/iconos/7.png" type="image/png">
+  <!-- Vincula el CSS externo -->
+  <link rel="stylesheet" href="/static/styles/contraseñaRecuperada.css" type="text/css">
+</head>
+<body>
+  <div class="recover-container">
+    <!-- Columna Izquierda: Imagen de Fondo -->
+    <div class="image-side"></div>
+    <!-- Columna Derecha: Formulario -->
+    <div class="form-side">
+      <div class="form-content">
+        <h1>¡Gracias!, hemos enviado un código para restablecer su contraseña.</h1>
+        <!-- Se puede incluir una imagen ilustrativa si se desea -->
+        <img src="/static/img/recuperarContraseña/img1.png" alt="Contacto">
+        <form action="/verificar_codigo" method="post">
+          <label for="codigo" class="sub">Ingrese el código recibido en su correo electronico:</label><br>
+          <input type="text" id="codigo" name="codigo" 
+                 placeholder="#Código"
+                 maxlength="5" 
+                 pattern="[A-Za-z0-9]{5}" 
+                 required>
+          <br>
+          <button type="submit">Validar</button>
+        </form>
+        {% if mensaje_error %}
+          <p class="error">{{ mensaje_error }}</p>
+        {% endif %}
+        <div class="recover-link">
+          <a class="sub1" href="{{ url_for('index') }}">Regresar a la página principal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

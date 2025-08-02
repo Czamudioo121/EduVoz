@@ -1,0 +1,183 @@
+/* ============================
+   RESET BÁSICO
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* ============================
+     LAYOUT PRINCIPAL
+  ============================ */
+  .container {
+    display: flex;              /* Franja naranja + contenido */
+    min-height: 100vh;          /* Ocupa toda la ventana */
+    align-items: stretch;
+  }
+  
+  /* Franja naranja a la izquierda */
+  .sidebar-naranja {
+    width: 60px;
+    min-height: 100vh;          /* Asegura que sea tan alta como la ventana */
+    background-color: #fab26a;  /* Color naranja */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  /* Botón de regresar */
+  .back-btn {
+    border: none;
+    background: none;
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* ============================
+     CONTENIDO PRINCIPAL
+  ============================ */
+  .contenido {
+    flex: 1;                    /* Ocupa el resto del espacio a la derecha */
+    padding: 20px 40px;
+    background-color: #fff;
+  }
+  
+  /* Encabezado en la misma altura del botón */
+  .header-row {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .header-row h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  /* Descripción debajo del título */
+  .contenido p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+  
+  /* ============================
+     SECCIÓN DE GRÁFICAS
+  ============================ */
+  .graficas {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;    /* Centra horizontalmente las tarjetas */
+    align-items: flex-start;
+  }
+  
+  /* Tarjetas (letras, números) */
+  .letras, .numeros {
+    background-color: #fff;
+    width: 320px;               /* Más anchas */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  .letras h2, .numeros h2 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Gráficas más grandes */
+  .graficoLetras, .graficoNumeros {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Stats (Errores / Aciertos) */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat .value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  .stat .label {
+    font-size: 14px;
+    color: #777;
+  }
+
+  /* Botón de regresar estilo simple con flecha */
+.regresar {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.regresar:hover {
+  text-decoration: underline;
+}
+
+  
+  /* ============================
+     MEDIA QUERIES (RESPONSIVO)
+  ============================ */
+  @media (max-width: 768px) {
+    .contenido {
+      padding: 20px;
+    }
+    .header-row {
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .header-row h1 {
+      font-size: 24px;
+    }
+    .contenido p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .graficas {
+      flex-direction: column;
+      align-items: center;
+    }
+    .letras, .numeros {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    .graficoLetras, .graficoNumeros {
+      width: 200px;
+      height: 200px;
+    }
+    .stat .value {
+      font-size: 20px;
+    }
+  }
+  

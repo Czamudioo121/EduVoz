@@ -1,0 +1,4 @@
+git add .
+git commit -m "Elimine el archivo de ejemplo"
+git push origin main
+git pull o git pull origin main

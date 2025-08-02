@@ -1,0 +1,174 @@
+/* =============================
+   RESET BÁSICO
+============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* =============================
+     CONTENEDOR PRINCIPAL
+     Dos columnas: .form-side y .image-side
+  ============================= */
+  .login-container {
+    display: flex;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+  }
+  
+  /* =============================
+     COLUMNA IZQUIERDA: FORMULARIO (50%)
+  ============================= */
+  .form-side {
+    width: 50%;
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente el contenido interno */
+    align-items: center;      /* Centra verticalmente */
+    background-color: #fff;   
+  }
+  
+  /* CONTENEDOR INTERNO PARA HACERLO MÁS ANGOSTO */
+  .form-content {
+    width: 70%;         /* Ajusta el porcentaje que quieras (70%, 80%, etc.) */
+    max-width: 400px;   /* No crecerá más de 400px en pantallas grandes */
+  }
+  
+  /* Título y subtítulo */
+  .form-content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .form-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* =============================
+     INPUTS CON BORDES REDONDEADOS
+  ============================= */
+  .input-group {
+    margin-bottom: 20px;
+    position: relative; /* Para posicionar el ícono ojo en .password-group */
+  }
+  
+  /* Campo de texto con esquinas redondeadas */
+  .text-field {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Borde redondeado */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .text-field::placeholder {
+    color: #aaa;
+  }
+  .text-field:focus {
+    border-color: #007AFF; /* Azul al enfocar */
+  }
+  
+  /* =============================
+     ÍCONO OJO PARA MOSTRAR/OCULTAR
+  ============================= */
+  .password-group .toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  .password-group .toggle-icon img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* =============================
+     CHECKBOX "Recordar mis datos"
+  ============================= */
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* BOTÓN INGRESAR (AZUL GRANDE) */
+  .btn {
+    display: inline-block;
+    width: 100%;
+    background-color: #007AFF; /* Azul estilo iOS */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #005BB5;
+  }
+  
+  /* ENLACES DE RECUPERACIÓN/CREACIÓN */
+  .links {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .links p {
+    margin-bottom: 10px;
+  }
+  .links a {
+    color: #007AFF;
+    text-decoration: none;
+  }
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* =============================
+     COLUMNA DERECHA: IMAGEN (50%)
+     Usamos background-size: cover
+     para llenar el espacio,
+     aunque recorte o distorsione.
+  ============================= */
+  .image-side {
+    width: 50%;
+    background-color: #fff; /* Opcional */
+    background-image: url('../../static/img/inicioSesion/fondo.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Se llena, aunque recorte o distorsione */
+  }
+  
+  /* =============================
+     RESPONSIVIDAD
+  ============================= */
+  @media screen and (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+    }
+    .form-side, .image-side {
+      width: 100%;
+    }
+    .form-side {
+      padding: 40px;
+    }
+    .image-side {
+      height: 300px; /* Para que se vea la imagen en móvil */
+    }
+  }
+  

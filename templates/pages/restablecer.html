@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Reestablece tu contraseña</title>
+  <link rel="icon" href="/static/img/iconos/B.png" type="image/png">
+  <!-- Vincula tu CSS externo (ajusta la ruta si difiere) -->
+  <link rel="stylesheet" href="../../static/styles/verificar.css" />
+</head>
+<body>
+
+  <!-- Contenedor principal (2 columnas) -->
+  <div class="reset-container">
+
+    <!-- Columna Izquierda: Imagen (50%) -->
+    <div class="image-side"></div>
+
+    <!-- Columna Derecha: Formulario (50%) -->
+    <div class="form-side">
+      <div class="form-content">
+        
+        <!-- Título -->
+        <h1>Reestablece tu contraseña</h1>
+
+        <!-- Subtítulo -->
+        <p class="intro-text">Introduce la nueva contraseña:</p>
+
+        <!-- Formulario -->
+        <form action="/cambiar_contraseña" method="post">
+          
+          <!-- Campo “Nueva contraseña” -->
+          <div class="rectangle-input-group">
+            <input 
+              type="password" 
+              id="nueva_contraseña" 
+              name="nueva_contraseña" 
+              placeholder="Nueva contraseña"
+              minlength="8"
+              required
+            >
+            <span 
+              class="eye-icon"
+              onmousedown="showPassword('nueva_contraseña')" 
+              onmouseup="hidePassword('nueva_contraseña')"
+              onmouseleave="hidePassword('nueva_contraseña')"
+            >
+              <img src="../../static/img/inicioSesion/ojo.png" alt="Mostrar contraseña">
+            </span>
+          </div>
+
+          <!-- Campo “Confirmar contraseña” -->
+          <div class="rectangle-input-group">
+            <input 
+              type="password" 
+              id="confirmar_contraseña" 
+              name="confirmar_contraseña" 
+              placeholder="Confirmar contraseña"
+              minlength="8"
+              required
+            >
+            <span 
+              class="eye-icon"
+              onmousedown="showPassword('confirmar_contraseña')" 
+              onmouseup="hidePassword('confirmar_contraseña')"
+              onmouseleave="hidePassword('confirmar_contraseña')"
+            >
+              <img src="../../static/img/inicioSesion/ojo.png" alt="Mostrar contraseña">
+            </span>
+          </div>
+
+          <!-- Información Importante -->
+          <h2 class="info-title">Información Importante</h2>
+          <ul class="info-list">
+            <li>No reveles tu contraseña a nadie.</li>
+            <li>Utilice 8 o más caracteres con una combinación de letras,<br>
+            números y símbolos.</li>
+          </ul>
+
+          <!-- Botón “Aceptar” (mismo ancho que los campos) -->
+          <button type="submit" class="btn">Aceptar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para mostrar/ocultar la contraseña mientras se presione el ícono -->
+  <script>
+    function showPassword(idCampo) {
+      document.getElementById(idCampo).type = 'text';
+    }
+    function hidePassword(idCampo) {
+      document.getElementById(idCampo).type = 'password';
+    }
+  </script>
+
+</body>
+</html>

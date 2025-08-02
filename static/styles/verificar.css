@@ -1,0 +1,170 @@
+/* ============================
+   RESET BÁSICO
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+/* ============================
+   CONTENEDOR PRINCIPAL (2 COLUMNAS)
+============================ */
+.reset-container {
+  display: flex;
+  height: 100vh; /* Ocupa toda la ventana */
+}
+
+/* ============================
+   COLUMNA IZQUIERDA: IMAGEN (50%)
+============================ */
+.image-side {
+  width: 50%;
+  background: url('../../static/img/restablecer/fondo.jpeg') center/cover no-repeat;
+  /* Ajusta la ruta de tu imagen */
+}
+
+/* ============================
+   COLUMNA DERECHA: FORMULARIO (50%)
+============================ */
+.form-side {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;   /* Ubicar contenido arriba */
+  justify-content: flex-start;
+  background-color: #fff;
+  /* Ajusta para mover el contenido a la derecha y abajo */
+  padding: 80px 40px 40px 100px; 
+}
+
+/* Contenedor interno */
+.form-content {
+  width: 100%;
+  max-width: 500px;
+  text-align: left; /* Texto a la izquierda */
+}
+
+/* TÍTULO */
+.form-content h1 {
+  font-size: 40px; 
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* SUBTÍTULO */
+.intro-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+/* ============================
+   CAMPOS RECTANGULARES CON OJITO
+============================ */
+.rectangle-input-group {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Mismo ancho que el botón */
+  margin: 0 auto 20px 0; /* left aligned, spacing below */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px; /* Espacio interno */
+}
+.rectangle-input-group input {
+  flex: 1;           /* Ocupar todo el espacio disponible */
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  color: #000;
+  background-color: transparent;
+  padding: 0 10px;   /* Margen interno para el texto */
+}
+.rectangle-input-group input::placeholder {
+  color: #999;
+}
+
+/* Ícono (ojito) */
+.eye-icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.eye-icon img {
+  width: 100%;
+  height: auto;
+}
+
+/* ============================
+   INFORMACIÓN IMPORTANTE
+============================ */
+.info-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.info-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ============================
+   BOTÓN (mismo ancho que los campos)
+============================ */
+.btn {
+  display: block;
+  font-size: 18px; 
+  background-color: #1A73E8; /* Azul estilo Google */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  border-radius: 8px;
+  /* Mismo ancho que los inputs */
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  margin-bottom: 20px; /* Espacio debajo */
+}
+.btn:hover {
+  background-color: #1669c1;
+}
+
+/* ============================
+   RESPONSIVIDAD (móviles)
+============================ */
+@media screen and (max-width: 768px) {
+  .reset-container {
+    flex-direction: column;
+  }
+  .image-side,
+  .form-side {
+    width: 100%;
+  }
+  .image-side {
+    height: 300px; /* Para que se vea la imagen en móvil */
+  }
+  .form-side {
+    padding: 40px;
+  }
+  .rectangle-input-group input {
+    font-size: 16px;
+  }
+  .btn {
+    font-size: 16px;
+    height: 40px;
+  }
+}

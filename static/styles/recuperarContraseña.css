@@ -1,0 +1,188 @@
+/* ============================
+   RESET BÁSICO
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #000; /* Texto en negro */
+  }
+  
+  /* ============================
+     CONTENEDOR PRINCIPAL
+     (2 columnas al 50%)
+  ============================ */
+  .recover-container {
+    display: flex;
+    height: 100vh; /* Ocupa toda la ventana */
+  }
+  
+  /* ============================
+     COLUMNA IZQUIERDA: IMAGEN DE FONDO
+  ============================ */
+  .image-side {
+    width: 50%;
+    /* Ajusta la ruta a tu imagen real */
+    background-image: url('../../static/img/recuperarContraseña/fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* ============================
+     COLUMNA DERECHA: FORMULARIO
+     Más a la derecha y un poco abajo
+     gracias al padding
+  ============================ */
+  .form-side {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start; /* Para ubicar el contenido arriba */
+    justify-content: flex-start;
+    /* Ajusta estos valores para mover el contenido */
+    padding-top: 80px;     /* Empuja hacia abajo */
+    padding-left: 100px;   /* Empuja hacia la derecha */
+    padding-right: 40px;   
+    padding-bottom: 40px;  
+  }
+  
+  /* Contenedor interno (alineado a la izquierda) */
+  .form-content {
+    width: 80%;
+    max-width: 500px;
+    text-align: left; /* Título y texto a la izquierda */
+  }
+  
+  /* Título grande */
+  .form-content h1 {
+    font-size: 40px; 
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+  
+  /* Texto introductorio */
+  .intro-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #000;
+  }
+  
+  /* ============================
+     CONTENEDOR PARA INPUT, BOTÓN Y ENLACE
+     (Mismo ancho: 400px)
+  ============================ */
+  .action-container {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* ============================
+     INPUT CON ÍCONO
+  ============================ */
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Espacio debajo del input */
+    padding: 0 10px;     
+    background-color: #fff;
+    width: 100%; /* Ocupa todo el ancho del .action-container */
+  }
+  .input-container input {
+    flex: 1;
+    height: 40px;
+    font-size: 16px;
+    border: none;      
+    outline: none;
+    background-color: transparent;
+    color: #000;
+  }
+  .input-container input::placeholder {
+    color: #999;
+  }
+  /* Efecto focus (resaltar contenedor) */
+  .input-container:focus-within {
+    border-color: #1A73E8; /* Azul Google-like */
+  }
+  
+  /* Ícono (sobre) a la derecha */
+  .icon {
+    margin-left: 8px;
+  }
+  .icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  /* ============================
+     BOTÓN “ACEPTAR” (AZUL)
+     Mismo ancho que el input
+  ============================ */
+  .btn {
+    display: block;
+    font-size: 18px; 
+    height: 40px;
+    border-radius: 8px;
+    background-color: #1A73E8; /* Azul estilo Google */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;    /* Ocupa todo el ancho del .action-container */
+    margin-bottom: 20px; /* Espacio debajo */
+  }
+  .btn:hover {
+    background-color: #1669c1;
+  }
+  
+  /* ============================
+     ENLACE “¿Recordaste tu contraseña?”
+     Centrado dentro de .action-container
+  ============================ */
+  .recover-link {
+    font-size: 16px;
+    text-align: center; /* Centra el texto solo dentro de su contenedor (400px) */
+  }
+  .recover-link a {
+    color: #1A73E8;
+    text-decoration: none;
+  }
+  .recover-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================
+     RESPONSIVIDAD (móviles)
+  ============================ */
+  @media screen and (max-width: 768px) {
+    .recover-container {
+      flex-direction: column;
+    }
+    .image-side,
+    .form-side {
+      width: 100%;
+    }
+    .image-side {
+      height: 300px; /* Para que se vea la imagen en móvil */
+    }
+    .form-side {
+      padding-top: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
+    .btn {
+      font-size: 16px;
+      height: 40px;
+    }
+  }
+  

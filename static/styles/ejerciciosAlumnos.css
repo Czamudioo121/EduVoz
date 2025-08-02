@@ -1,0 +1,206 @@
+/* ======================================
+   FONT
+===================================== */
+@font-face {
+  font-family: 'Eracake';
+  src: url('/static/fonts/Eracake.ttf') format('truetype');
+}
+
+/* ======================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+.cuerpo {
+  position: relative;            /* para posicionar el botón */
+  text-align: center;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  width: 800px;
+  max-width: 90%;
+  min-height: 600px;             /* altura mínima, ahora crece */
+  height: auto;                  /* deja que el contenido expanda */
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 auto 50px;
+  background-color: #37ABE4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+   BOTÓN REGRESAR
+===================================== */
+.arrow-icon {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.back-btn {
+  position: absolute;   /* fija en la .cuerpo */
+  top: 10px;            /* distancia del borde superior */
+  left: 10px;           /* distancia del borde izquierdo */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #fff;          /* blanco para contraste */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;            /* elimina márgenes extra */
+}
+
+.back-btn:hover {
+  color: #4b4a4a;
+}
+
+/* ======================================
+   TÍTULO
+===================================== */
+.cuerpo #titulo {
+  background-color: #07c;
+  margin-top: 50px;     /* baja el título para evitar solaparse con el botón */
+  padding: 10px 0;
+}
+
+/* ======================================
+   LISTADO DE EJERCICIOS
+===================================== */
+.ejercicios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ======================================
+   TARJETA DE EJERCICIO
+===================================== */
+.ejercicio {
+  background-image: url('/static/img/alumnos/n1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 230px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Eracake';
+  font-size: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ejercicio:hover {
+  transform: scale(1.05);
+}
+
+.ejercicio a {
+  text-decoration: none;
+  color: #07c;
+}
+
+.ejercicio a:hover {
+  color: rgb(31, 243, 77);
+}
+
+/* ======================================
+   MEDIA QUERIES (RESPONSIVE) AJUSTADAS
+===================================== */
+
+/* Hasta pantallas de 900px */
+@media (max-width: 900px) {
+  .cuerpo {
+    width: 95%;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  .cuerpo #titulo {
+    font-size: 32px;
+    margin-top: 40px; /* ajusta para no solaparse */
+  }
+  .ejercicio {
+    width: 45%;
+    height: auto;
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  .ejercicio p {
+    font-size: 20px;
+  }
+  .back-btn {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* Hasta pantallas de 600px */
+@media (max-width: 600px) {
+  .cuerpo {
+    width: 90%;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .cuerpo #titulo {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+  .ejercicios {
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+  .ejercicio {
+    width: 90%;
+    height: 100px;
+    font-size: 20px;
+    padding: 0.5rem;
+  }
+  .ejercicio p {
+    font-size: 18px;
+  }
+  .back-btn {
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+/* Hasta pantallas de 400px */
+@media (max-width: 400px) {
+  .cuerpo {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .cuerpo #titulo {
+    font-size: 24px;
+    margin-top: 25px;
+  }
+  .ejercicios {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ejercicio {
+    width: 100%;
+    height: 90px;
+    font-size: 18px;
+  }
+  .ejercicio p {
+    font-size: 16px;
+  }
+  .back-btn {
+    top: 6px;
+    left: 6px;
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}

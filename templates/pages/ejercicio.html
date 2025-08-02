@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/actividades.css') }}">
+  <link rel="icon" href="/static/img/iconos/F.png" type="image/png">
+  <title>Ejercicio</title>
+  <style>
+    /* Estilo para el mensaje de respuesta */
+    #mensajeError {
+      font-size: 20px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 80%;
+      text-align: center;
+      display: none; /* Se muestra solo cuando es necesario */
+    }
+
+    .correcto {
+      color: #4CAF50; /* Verde */
+      background-color: #d4edda;
+    }
+
+    .incorrecto {
+      color: #d8000c; /* Rojo */
+      background-color: #ffd2d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Repite la siguiente letra:</h1>
+    <p id="letra"></p>
+
+    <!-- Div para mostrar mensajes dinámicamente -->
+    <div id="mensajeError"></div>
+
+    <div class="opciones">
+      <!-- Botón 1 (Regresar) -->
+      <button onclick="salirDelEjercicio()" class="btn-salir">
+        <img class="boto" src="/static/img/actividades/salir.png" alt="Salir">
+      </button>
+      <!-- Botón 2 (Micrófono) -->
+      <button onclick="iniciarReconocimiento()" class="btn-micro">
+        <img class="boton" src="/static/img/actividades/microfono.png" alt="Micrófono">
+      </button>
+      <!-- Botón 3 (Recargar/Audio) -->
+      <button onclick="reproducirAudio()" class="btn-reload">
+        <img class="boton" src="/static/img/actividades/recargar.png" alt="Recargar">
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar mensaje en pantalla con animación
+    function mostrarMensajeEnPantalla(texto, esCorrecto) {
+      const mensajeDiv = document.getElementById("mensajeError");
+
+      // Limpiar mensaje anterior
+      mensajeDiv.innerText = texto;
+
+      // Cambiar estilo según si es correcto o incorrecto
+      if (esCorrecto) {
+        mensajeDiv.className = "correcto";
+      } else {
+        mensajeDiv.className = "incorrecto";
+      }
+
+      mensajeDiv.style.display = "block"; // Mostrar mensaje
+
+      // Ocultar el mensaje después de unos segundos
+      setTimeout(() => {
+        mensajeDiv.style.display = "none";
+      }, 6000); // 6 segundos
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/microfonoP.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+  <script>
+    const letrasPermitidas = {{ ejercicio|tojson }};
+  </script>  
+  <script src="{{ url_for('static', filename='js/letraEjercicioP.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/salir.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* ------------------ RESET Y ESTILOS GLOBALES ------------------ */
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+}
+
+
+.todo{
+    text-align: center;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    position: relative;
+    width: 800px;
+    height: auto;
+    overflow: auto;
+    min-height: 200px;
+
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0 auto 50px;
+    background-color: #37ABE4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Para la tabla */
+table{
+    margin: auto;
+}
+
+#campoTitulo{
+    width: 500px;
+}
+
+/* Para el botón de agregar */
+.contenedor-agregar {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin: 20px 0; /* Espacio arriba y abajo */
+}
+
+.boton-agregar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    padding-left: 40px;
+    border-radius: 10px;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-agregar:hover {
+    background-color: #004d40;
+  }
+  
+  .boton-agregar svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    transition: fill 0.3s ease;
+  }
+  
+  .boton-agregar:hover svg {
+    fill: #1eff00; /* Cambia el color del ícono al pasar el mouse */
+  }  
+
+.btn-actualizar svg {
+    transition: fill 0.3s ease;
+  }
+
+.btn-actualizar:hover svg {
+    fill: #0026ff; /* Aquí pones el color que quieras cuando pasen el mouse */
+  }
+
+.btn-eliminar svg {
+    transition: fill 0.3s ease;
+  }
+
+.btn-eliminar:hover svg {
+    fill: #f72a2a; /* Aquí pones el color que quieras cuando pasen el mouse */
+  }
+
+  .titulo {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: -40px;
+    background-color: #07c;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 0 20px;
+}
+
+.btn-regresar {
+    position: absolute;
+    left: 20px; /* Pega el botón a la izquierda */
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-regresar:hover {
+    background-color: rgb(201, 202, 206);
+}
+
+.titulo-texto {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
