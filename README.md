@@ -4,78 +4,77 @@
 
 ## 📑 Índice General
 
-### **1. Contexto y Problemática del Proyecto**
-   - 1.1 Impacto de la Pandemia COVID-19 en Educación Preescolar
-     - 1.1.1 Estadísticas de Abandono Escolar
-     - 1.1.2 Brecha Digital y Educativa
-     - 1.1.3 Desafíos del Aprendizaje Remoto
-   - 1.2 Carencias en Herramientas Educativas Digitales
-     - 1.2.1 Falta de Recursos en Español
-     - 1.2.2 Limitaciones del Reconocimiento de Voz Infantil
-     - 1.2.3 Necesidad de Seguimiento Personalizado
+### **1. [Contexto y Problemática del Proyecto](#1-contexto-y-problemática-del-proyecto)**
+   - 1.1 [Impacto de la Pandemia COVID-19 en Educación Preescolar](#11-impacto-de-la-pandemia-covid-19-en-educación-preescolar)
+     - 1.1.1 [Estadísticas de Abandono Escolar](#111-estadísticas-de-abandono-escolar)
+     - 1.1.2 [Brecha Digital y Educativa](#112-brecha-digital-y-educativa)
+     - 1.1.3 [Desafíos del Aprendizaje Remoto](#113-desafíos-del-aprendizaje-remoto)
+   - 1.2 [Carencias en Herramientas Educativas Digitales](#12-carencias-en-herramientas-educativas-digitales)
+     - 1.2.1 [Falta de Recursos en Español](#121-falta-de-recursos-en-español)
+     - 1.2.2 [Limitaciones del Reconocimiento de Voz Infantil](#122-limitaciones-del-reconocimiento-de-voz-infantil)
 
-### **2. Objetivos y Alcance del Proyecto**
-   - 2.1 Objetivo General
-   - 2.2 Objetivos Específicos
-   - 2.3 Alcance y Limitaciones
-   - 2.4 Beneficiarios del Proyecto
+### **2. [Objetivos y Alcance del Proyecto](#2-objetivos-y-alcance-del-proyecto)**
+   - 2.1 [Objetivo General](#21-objetivo-general)
+   - 2.2 [Objetivos Específicos](#22-objetivos-específicos)
+   - 2.3 [Alcance y Limitaciones](#23-alcance-y-limitaciones)
+   - 2.4 [Beneficiarios del Proyecto](#24-beneficiarios-del-proyecto)
 
-### **3. Investigación y Metodología**
-   - 3.1 Estado del Arte
-     - 3.1.1 Análisis Comparativo de Aplicaciones Existentes
-     - 3.1.2 Diferenciación Tecnológica
-   - 3.2 Marco Teórico Aplicado
-     - 3.2.1 Fundamentos de Educación Infantil
-     - 3.2.2 Aprendizaje Basado en Juegos
-     - 3.2.3 Programa de Estudios SEP
-   - 3.3 Investigación de Campo
-     - 3.3.1 Entrevistas con Docentes
-     - 3.3.2 Encuestas a Tutores
-     - 3.3.3 Análisis de Factibilidad
+### **3. [Investigación y Metodología](#3-investigación-y-metodología)**
+   - 3.1 [Estado del Arte](#31-estado-del-arte)
+     - 3.1.1 [Análisis Comparativo de Aplicaciones Existentes](#311-análisis-comparativo-de-aplicaciones-existentes)
+     - 3.1.2 [Diferenciación Tecnológica](#312-diferenciación-tecnológica)
+   - 3.2 [Marco Teórico Aplicado](#32-marco-teórico-aplicado)
+     - 3.2.1 [Fundamentos de Educación Infantil](#321-fundamentos-de-educación-infantil)
+     - 3.2.2 [Aprendizaje Basado en Juegos](#322-aprendizaje-basado-en-juegos)
+     - 3.2.3 [Programa de Estudios SEP](#323-programa-de-estudios-sep)
+   - 3.3 [Investigación de Campo](#33-investigación-de-campo)
+     - 3.3.1 [Entrevistas con Docentes](#331-entrevistas-con-docentes)
+     - 3.3.2 [Encuestas a Tutores](#332-encuestas-a-tutores)
+     - 3.3.3 [Análisis de Factibilidad](#333-análisis-de-factibilidad)
 
-### **4. Diseño UI/UX Especializado para Niños**
-   - 4.1 Principios de Diseño Infantil
-     - 4.1.1 Psicología del Color en Niños
-     - 4.1.2 Navegación Simplificada
-     - 4.1.3 Retroalimentación Inmediata
-   - 4.2 Proceso de Diseño
-     - 4.2.1 Wireframes y Mockups
-     - 4.2.2 Prototipado en Figma
-     - 4.2.3 Validación con Usuarios
+### **4. [Diseño UI/UX Especializado para Niños](#4-diseño-uiux-especializado-para-niños)**
+   - 4.1 [Principios de Diseño Infantil](#41-principios-de-diseño-infantil)
+     - 4.1.1 [Psicología del Color en Niños](#411-psicología-del-color-en-niños)
+     - 4.1.2 [Navegación Simplificada](#412-navegación-simplificada)
+     - 4.1.3 [Retroalimentación Inmediata](#413-retroalimentación-inmediata)
+   - 4.2 [Proceso de Diseño](#42-proceso-de-diseño)
+     - 4.2.1 [Wireframes y Mockups](#421-wireframes-y-mockups)
+     - 4.2.2 [Prototipado en Figma](#422-prototipado-en-figma)
+     - 4.2.3 [Validación con Usuarios](#423-validación-con-usuarios)
 
-### **5. Tecnologías y Arquitectura**
-   - 5.1 Stack Tecnológico
-     - 5.1.1 Backend: Python y Flask
-     - 5.1.2 Frontend: HTML5, CSS3, JavaScript
-     - 5.1.3 Reconocimiento de Voz: DeepSpeech
-     - 5.1.4 Base de Datos: MariaDB
-   - 5.2 Arquitectura del Sistema
-     - 5.2.1 Patrón MVC
-     - 5.2.2 Componentes Principales
-     - 5.2.3 Flujo de Datos
+### **5. [Tecnologías y Arquitectura](#5-tecnologías-y-arquitectura)**
+   - 5.1 [Stack Tecnológico](#51-stack-tecnológico)
+     - 5.1.1 [Backend: Python y Flask](#511-backend-python-y-flask)
+     - 5.1.2 [Frontend: HTML5, CSS3, JavaScript](#512-frontend-html5-css3-javascript)
+     - 5.1.3 [Reconocimiento de Voz: DeepSpeech](#513-reconocimiento-de-voz-deepspeech)
+     - 5.1.4 [Base de Datos: MariaDB](#514-base-de-datos-mariadb)
+   - 5.2 [Arquitectura del Sistema](#52-arquitectura-del-sistema)
+     - 5.2.1 [Patrón MVC](#521-patrón-mvc)
+     - 5.2.2 [Componentes Principales](#522-componentes-principales)
+     - 5.2.3 [Flujo de Datos](#523-flujo-de-datos)
 
-### **6. Implementación Técnica**
-   - 6.1 Desarrollo del Backend
-     - 6.1.1 Servidor Flask
-     - 6.1.2 Integración con DeepSpeech
-     - 6.1.3 Sistema de Autenticación
-   - 6.2 Desarrollo del Frontend
-     - 6.2.1 Interfaz Responsiva
-     - 6.2.2 Captura de Audio
-     - 6.2.3 Comunicación AJAX
-   - 6.3 Base de Datos
-     - 6.3.1 Esquema Relacional
-     - 6.3.2 Integridad Referencial
+### **6. [Implementación Técnica](#6-implementación-técnica)**
+   - 6.1 [Desarrollo del Backend](#61-desarrollo-del-backend)
+     - 6.1.1 [Servidor Flask](#611-servidor-flask)
+     - 6.1.2 [Integración con DeepSpeech](#612-integración-con-deepspeech)
+     - 6.1.3 [Sistema de Autenticación](#613-sistema-de-autenticación)
+   - 6.2 [Desarrollo del Frontend](#62-desarrollo-del-frontend)
+     - 6.2.1 [Interfaz Responsiva](#621-interfaz-responsiva)
+     - 6.2.2 [Captura de Audio](#622-captura-de-audio)
+     - 6.2.3 [Comunicación AJAX](#623-comunicación-ajax)
+   - 6.3 [Base de Datos](#63-base-de-datos)
+     - 6.3.1 [Esquema Relacional](#631-esquema-relacional)
+     - 6.3.2 [Integridad Referencial](#632-integridad-referencial)
 
-### **7. Pruebas y Validación**
-   - 7.1 Pruebas Técnicas
-   - 7.2 Validación con Usuarios
-   - 7.3 Métricas de Usabilidad
+### **7. [Pruebas y Validación](#7-pruebas-y-validación)**
+   - 7.1 [Pruebas Técnicas](#71-pruebas-técnicas)
+   - 7.2 [Validación con Usuarios](#72-validación-con-usuarios)
+   - 7.3 [Métricas de Usabilidad](#73-métricas-de-usabilidad)
 
-### **8. Despliegue y Configuración**
-   - 8.1 Infraestructura en Google Cloud
-   - 8.2 Configuración de Producción
-   - 8.3 Instalación Local
+### **8. [Despliegue y Configuración](#8-despliegue-y-configuración)**
+   - 8.1 [Infraestructura en Google Cloud](#81-infraestructura-en-google-cloud)
+   - 8.2 [Configuración de Producción](#82-configuración-de-producción)
+   - 8.3 [Instalación Local](#83-instalación-local)
 
 ---
 
@@ -84,7 +83,7 @@
 ### 1.1 Impacto de la Pandemia COVID-19 en Educación Preescolar
 
 #### 1.1.1 Estadísticas de Abandono Escolar
-El contexto de desarrollo de EduVoz surge de una problemática educativa crítica: **el 94.7% de estudiantes preescolares no concluyeron el ciclo 2019-2020** debido a la suspensión de clases presenciales causada por la pandemia COVID-19 [1]. Esta situación generó una brecha educativa significativa que afectó particularmente a los niños en edad preescolar, quienes se encuentran en un período crítico para el desarrollo de la conciencia fonológica.
+El contexto de desarrollo de EduVoz surge de una problemática educativa crítica: **el 94.7% de estudiantes preescolares no concluyeron el ciclo 2019-2020** debido a la suspensión de clases presenciales causada por la pandemia COVID-19. Esta situación generó una brecha educativa significativa que afectó particularmente a los niños en edad preescolar, quienes se encuentran en un período crítico para el desarrollo de la conciencia fonológica.
 
 #### 1.1.2 Brecha Digital y Educativa
 La transición forzada hacia modalidades de educación a distancia evidenció limitaciones importantes:
@@ -92,7 +91,7 @@ La transición forzada hacia modalidades de educación a distancia evidenció li
 - **Carencia de herramientas digitales educativas** adaptadas al contexto hispanohablante
 - **Falta de recursos interactivos** para el desarrollo de habilidades básicas
 - **Limitaciones geográficas y tecnológicas** que impiden el acceso equitativo a la educación
-- **Ausencia de seguimiento personalizado** del progreso estudiantil [1]
+- **Ausencia de seguimiento personalizado** del progreso estudiantil
 
 #### 1.1.3 Desafíos del Aprendizaje Remoto
 Los desafíos identificados incluyen:
@@ -105,7 +104,7 @@ Los desafíos identificados incluyen:
 ### 1.2 Carencias en Herramientas Educativas Digitales
 
 #### 1.2.1 Falta de Recursos en Español
-El análisis del estado del arte reveló que **la mayoría de aplicaciones educativas infantiles carecen de reconocimiento de voz en español**, limitando su eficacia en el contexto sociolingüístico mexicano [1]. Las aplicaciones existentes como ABCmouse e IXL no ofrecen funcionalidades de reconocimiento de voz, mientras que otras como Starfall y Read-Along están diseñadas principalmente para el inglés.
+El análisis del estado del arte reveló que **la mayoría de aplicaciones educativas infantiles carecen de reconocimiento de voz en español**, limitando su eficacia en el contexto sociolingüístico mexicano. Las aplicaciones existentes como ABCmouse e IXL no ofrecen funcionalidades de reconocimiento de voz, mientras que otras como Starfall y Read-Along están diseñadas principalmente para el inglés.
 
 #### 1.2.2 Limitaciones del Reconocimiento de Voz Infantil
 Las tecnologías existentes presentan limitaciones específicas:
@@ -113,12 +112,12 @@ Las tecnologías existentes presentan limitaciones específicas:
 - **Baja precisión** en el reconocimiento de voces infantiles
 - **Algoritmos básicos** que no aprovechan arquitecturas avanzadas de redes neuronales
 - **Falta de adaptación** al habla de niños hispanohablantes
-- **Ausencia de retroalimentación pedagógicamente apropiada** [1]
+- **Ausencia de retroalimentación pedagógicamente apropiada**
 
 ## 2. Objetivos y Alcance del Proyecto
 
 ### 2.1 Objetivo General
-**Desarrollar un prototipo de aplicación web interactiva para niños de segundo grado de preescolar, que utilice reconocimiento de voz para fomentar la práctica de la pronunciación de letras y dígitos** [1].
+**Desarrollar un prototipo de aplicación web interactiva para niños de segundo grado de preescolar, que utilice reconocimiento de voz para fomentar la práctica de la pronunciación de letras y dígitos**.
 
 ### 2.2 Objetivos Específicos
 
@@ -128,7 +127,7 @@ Las tecnologías existentes presentan limitaciones específicas:
 4. **Integrar retroalimentación multimedia** con audio y elementos visuales inmediatos
 5. **Desarrollar módulo de seguimiento** del progreso estudiantil con visualizaciones gráficas
 6. **Implementar sistema de gestión de grupos** para docentes y administradores
-7. **Realizar pruebas de usabilidad** y validación con usuarios finales [1]
+7. **Realizar pruebas de usabilidad** y validación con usuarios finales
 
 ### 2.3 Alcance y Limitaciones
 
@@ -158,7 +157,7 @@ Las tecnologías existentes presentan limitaciones específicas:
 
 #### 3.1.1 Análisis Comparativo de Aplicaciones Existentes
 
-Se realizó un análisis exhaustivo de aplicaciones educativas infantiles existentes, evaluando sus características técnicas y funcionalidades [1]:
+Se realizó un análisis exhaustivo de aplicaciones educativas infantiles existentes, evaluando sus características técnicas y funcionalidades:
 
 | Aplicación | Reconocimiento de Voz | Idioma | IA Implementada |
 |------------|----------------------|---------|-----------------|
@@ -176,13 +175,13 @@ EduVoz se diferencia por:
 - **Arquitectura CNN + RNN avanzada** para procesamiento de habla infantil  
 - **Integración con curriculum SEP** para preescolar
 - **Interfaz diseñada específicamente** para niños de 4-5 años
-- **Sistema de seguimiento personalizado** del progreso [1]
+- **Sistema de seguimiento personalizado** del progreso
 
 ### 3.2 Marco Teórico Aplicado
 
 #### 3.2.1 Fundamentos de Educación Infantil
 
-El proyecto se fundamenta en la **importancia crítica del período de 3-6 años** para el desarrollo cognitivo, donde se establece la conciencia fonológica [1]. Durante esta etapa:
+El proyecto se fundamenta en la **importancia crítica del período de 3-6 años** para el desarrollo cognitivo, donde se establece la conciencia fonológica. Durante esta etapa:
 
 - **El cerebro experimenta desarrollo acelerado** en áreas del lenguaje
 - **Se establecen las bases** para la lectoescritura futura
@@ -196,7 +195,7 @@ Se aplica la metodología de **Game-Based Learning** que utiliza:
 - **Elementos lúdicos** para aumentar motivación y compromiso
 - **Desafíos progresivos** adaptados a la edad
 - **Recompensas inmediatas** través de retroalimentación audiovisual
-- **Dinámicas de juego** que facilitan la adquisición natural de conocimientos [1]
+- **Dinámicas de juego** que facilitan la adquisición natural de conocimientos
 
 #### 3.2.3 Programa de Estudios SEP
 
@@ -204,13 +203,13 @@ El contenido se alinea con el programa oficial de la SEP para Fase 2 (2° y 3° 
 
 - **Campo Formativo de Lenguajes**: Familiarización con letras como primer paso hacia lectoescritura
 - **Saberes y Pensamiento Científico**: Reconocimiento de números y conceptos matemáticos básicos
-- **Metodologías lúdicas** que respetan el ritmo natural de aprendizaje [1]
+- **Metodologías lúdicas** que respetan el ritmo natural de aprendizaje
 
 ### 3.3 Investigación de Campo
 
 #### 3.3.1 Entrevistas con Docentes
 
-Se realizaron **entrevistas semiestructuradas con 2 docentes de 2° grado de preescolar** del Jardín de Niños Robert Baden-Powell en Ecatepec, Estado de México [1].
+Se realizaron **entrevistas semiestructuradas con 2 docentes de 2° grado de preescolar** del Jardín de Niños Robert Baden-Powell en Ecatepec, Estado de México.
 
 **Principales hallazgos:**
 
@@ -221,7 +220,7 @@ Se realizaron **entrevistas semiestructuradas con 2 docentes de 2° grado de pre
    - *"La interfaz debe ser sencilla y colorida, algo que los niños encuentren atractivo y fácil de usar por sí mismos"* - Maestra Laura Gómez
 
 3. **Seguimiento del progreso**
-   - *"Sería ideal poder ver el progreso de cada niño, identificar sus aciertos y errores, y así adaptar nuestras clases"* - Maestra Ana Martínez [1]
+   - *"Sería ideal poder ver el progreso de cada niño, identificar sus aciertos y errores, y así adaptar nuestras clases"* - Maestra Ana Martínez
 
 #### 3.3.2 Encuestas a Tutores
 
@@ -231,7 +230,7 @@ Se aplicó una encuesta a **30 tutores** para evaluar la factibilidad operativa:
 - **95% dispuestos** a usar la aplicación propuesta
 - **88% valoran positivamente** el reconocimiento de voz
 - **92% consideran importante** el seguimiento del progreso
-- **100% dispuestos** a permitir el uso por parte de los niños [1]
+- **100% dispuestos** a permitir el uso por parte de los niños
 
 #### 3.3.3 Análisis de Factibilidad
 
@@ -240,7 +239,7 @@ Se evaluaron cuatro dimensiones de factibilidad:
 - **Técnica**: Viable con recursos humanos y tecnológicos disponibles
 - **Operativa**: Alta aceptación por parte de usuarios finales  
 - **Económica**: Costo total estimado de $504,000 MXN
-- **Legal**: Cumplimiento con LFPDPPP mediante aviso de privacidad [1]
+- **Legal**: Cumplimiento con LFPDPPP mediante aviso de privacidad
 
 ## 4. Diseño UI/UX Especializado para Niños
 
@@ -248,14 +247,14 @@ Se evaluaron cuatro dimensiones de factibilidad:
 
 #### 4.1.1 Psicología del Color en Niños
 
-El diseño de EduVoz aplica principios específicos de psicología del color para optimizar la experiencia de aprendizaje [1]:
+El diseño de EduVoz aplica principios específicos de psicología del color para optimizar la experiencia de aprendizaje:
 
 **Colores principales utilizados:**
 
 - **Amarillo**: Mejora la concentración y transmite alegría y vitalidad. Ideal para elementos de éxito y motivación
 - **Azul**: Promueve calma y control, estimula la creatividad. Utilizado en fondos y elementos de navegación  
 - **Verde**: Representa equilibrio y armonía, mejora la capacidad de lectura. Aplicado en elementos de progreso
-- **Naranja**: Mejora habilidades comunicativas y promueve interacción social [1]
+- **Naranja**: Mejora habilidades comunicativas y promueve interacción social
 
 **Colores evitados:**
 - **Rojo**: Puede generar agresividad en niños activos
@@ -264,7 +263,7 @@ El diseño de EduVoz aplica principios específicos de psicología del color par
 
 #### 4.1.2 Navegación Simplificada
 
-Basado en el estudio de la Dra. Cynthia M. Rubin "Usability for Kids Guidelines and Best Practices", se implementaron principios específicos [1]:
+Basado en el estudio de la Dra. Cynthia M. Rubin "Usability for Kids Guidelines and Best Practices", se implementaron principios específicos:
 
 **Simplicidad en el diseño:**
 - **Iconos grandes y claros** que representen las diferentes secciones
@@ -283,7 +282,7 @@ Basado en el estudio de la Dra. Cynthia M. Rubin "Usability for Kids Guidelines 
 - **Retroalimentación instantánea**: Respuestas claras y rápidas a las acciones
 - **Mensajes de felicitación** al completar tareas exitosamente
 - **Indicaciones de corrección amigables** en caso de error
-- **Indicadores de progreso visuales** como barras, medallas o certificados [1]
+- **Indicadores de progreso visuales** como barras, medallas o certificados
 
 ### 4.2 Proceso de Diseño
 
@@ -310,7 +309,7 @@ Se utilizó **Figma** como herramienta principal de diseño, creando:
 - **Tipografía Arial**: Clara y legible para niños
 - **Elementos interactivos grandes**: Fácil manipulación para manos pequeñas
 - **Navegación intuitiva**: Flujo simple y directo
-- **Consistencia visual**: Patrones repetibles a lo largo de la aplicación [1]
+- **Consistencia visual**: Patrones repetibles a lo largo de la aplicación
 
 #### 4.2.3 Validación con Usuarios
 
@@ -344,7 +343,7 @@ deepspeech==0.9.3
 - Amplia comunidad y documentación  
 - Excelente soporte para Machine Learning
 - Integración nativa con DeepSpeech
-- Patrón MVC bien implementado [1]
+- Patrón MVC bien implementado
 
 #### 5.1.2 Frontend: HTML5, CSS3, JavaScript
 
@@ -373,7 +372,7 @@ deepspeech==0.9.3
 - **Arquitectura CNN + RNN** optimizada para secuencias de audio
 - **Compatibilidad multiplataforma** (Linux, Windows, macOS)
 - **Código abierto** con licencia Mozilla Public License
-- **Soporte para español** mediante modelos pre-entrenados [1]
+- **Soporte para español** mediante modelos pre-entrenados
 
 ```python
 # Implementación básica
@@ -389,7 +388,7 @@ model.enableExternalScorer("deepspeech-0.9.3-models.scorer")
 - Rendimiento superior en consultas complejas
 - Licencia GPL (código abierto)
 - Soporte para transacciones ACID
-- Escalabilidad horizontal [1]
+- Escalabilidad horizontal
 
 ### 5.2 Arquitectura del Sistema
 
@@ -399,7 +398,7 @@ Implementación estricta del patrón Modelo-Vista-Controlador:
 
 - **Modelo**: Clases de datos y lógica de base de datos (MariaDB)
 - **Vista**: Templates HTML con Jinja2 y CSS/JavaScript
-- **Controlador**: Rutas Flask con lógica de negocio y validaciones [1]
+- **Controlador**: Rutas Flask con lógica de negocio y validaciones
 
 #### 5.2.2 Componentes Principales
 
@@ -426,7 +425,7 @@ Implementación estricta del patrón Modelo-Vista-Controlador:
 4. **DeepSpeech** transcribe audio a texto
 5. **Backend** valida respuesta contra esperada
 6. **Sistema** almacena resultado en base de datos
-7. **Frontend** recibe retroalimentación y actualiza UI [1]
+7. **Frontend** recibe retroalimentación y actualiza UI
 
 ## 6. Implementación Técnica
 
@@ -469,7 +468,7 @@ coneccion = mysql.connector.connect(
 - **Autenticación**: `/inicioSesion`, `/crearCuenta`, `/recuperarContraseña`
 - **Gestión de grupos**: `/crearGrupo`, `/listaAlumnos`, `/eliminarGrupo`  
 - **Actividades educativas**: `/ejercicioLetras`, `/ejercicioNumeros`
-- **Seguimiento**: `/progresoAlumno`, `/acabarActividades` [1]
+- **Seguimiento**: `/progresoAlumno`, `/acabarActividades`
 
 #### 6.1.2 Integración con DeepSpeech
 
@@ -764,6 +763,224 @@ CREATE TABLE Ejercicio (
     FechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CorreoDocente VARCHAR(100) NOT NULL,
     Activo BOOLEAN DEFAULT TRUE,
+    FOREIGN KEY (CorreoDocente) REFERENCES Docente(CorreoDocente) ON DELETE CASCADE,
+    INDEX idx_docente (CorreoDocente)
+);
+
+-- Tabla Resultado
+CREATE TABLE Resultado (
+    IdResultado INT AUTO_INCREMENT PRIMARY KEY,
+    IdAlumno INT NOT NULL,
+    IdEjercicio INT NOT NULL,
+    Aciertos INT DEFAULT 0,
+    Errores INT DEFAULT 0,
+    TiempoTranscurrido INT DEFAULT 0,
+    Fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (IdAlumno) REFERENCES Alumno(IdAlumno) ON DELETE CASCADE,
+    FOREIGN KEY (IdEjercicio) REFERENCES Ejercicio(IdEjercicio) ON DELETE CASCADE,
+    INDEX idx_alumno_fecha (IdAlumno, Fecha),
+    INDEX idx_ejercicio (IdEjercicio)
+);
+```
+
+#### 6.3.2 Integridad Referencial
+
+**Relaciones implementadas:**
+- **Docente → Grupo**: 1:1 (cada docente un grupo)
+- **Grupo → Alumno**: 1:N (un grupo muchos alumnos)
+- **Tutor → Alumno**: 1:1 (un tutor un alumno)
+- **Docente → Ejercicio**: 1:N (un docente muchos ejercicios)
+- **Alumno → Resultado**: 1:N (un alumno muchos resultados)
+- **Ejercicio → Resultado**: 1:N (un ejercicio muchos resultados)
+
+## 7. Pruebas y Validación
+
+### 7.1 Pruebas Técnicas
+
+**Pruebas unitarias implementadas:**
+- Creación de cuentas de usuario
+- Autenticación multi-rol
+- Procesamiento de reconocimiento de voz
+- Almacenamiento de resultados
+- Validación de datos de entrada
+
+### 7.2 Validación con Usuarios
+
+**Encuesta con 30 tutores** arrojó resultados positivos:
+- **95% dispuestos** a usar la aplicación
+- **88% valoran** el reconocimiento de voz  
+- **92% consideran importante** el seguimiento del progreso
+- **100% permitirían** su uso a los niños
+
+### 7.3 Métricas de Usabilidad
+
+**Resultados de validación con docentes:**
+- Alineación con objetivos pedagógicos ✓
+- Interfaz apropiada para la edad objetivo ✓  
+- Utilidad del sistema de seguimiento ✓
+- Facilidad de gestión de grupos ✓
+
+## 8. Despliegue y Configuración
+
+### 8.1 Infraestructura en Google Cloud
+
+**Configuración de producción:**
+
+```bash
+# Crear instancia Compute Engine
+gcloud compute instances create eduvoz-server \
+    --zone=us-central1-a \
+    --machine-type=e2-medium \
+    --subnet=default \
+    --image-family=ubuntu-2204-lts \
+    --image-project=ubuntu-os-cloud \
+    --boot-disk-size=20GB \
+    --tags=http-server,https-server
+
+# Configurar firewall
+gcloud compute firewall-rules create allow-http --allow tcp:80
+gcloud compute firewall-rules create allow-https --allow tcp:443
+```
+
+### 8.2 Configuración de Producción
+
+**Nginx como proxy reverso:**
+
+```nginx
+server {
+    listen 80;
+    server_name eduvoz.ejemplo.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name eduvoz.ejemplo.com;
+    
+    ssl_certificate /etc/letsencrypt/live/eduvoz.ejemplo.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/eduvoz.ejemplo.com/privkey.pem;
+    
+    # Configuraciones SSL modernas
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512;
+    ssl_prefer_server_ciphers off;
+    
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Timeouts para audio processing
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+    }
+    
+    location /static {
+        alias /home/eduvoz/app/static;
+        expires 1d;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
+
+**Gunicorn para WSGI:**
+
+```bash
+# Archivo gunicorn.conf.py
+bind = "127.0.0.1:5000"
+workers = 4
+worker_class = "sync"
+timeout = 60
+keepalive = 5
+max_requests = 1000
+max_requests_jitter = 100
+preload_app = True
+```
+
+### 8.3 Instalación Local
+
+**Requisitos del sistema:**
+- Python 3.8 o superior
+- MariaDB/MySQL 8.0+
+- 4GB RAM mínimo  
+- 10GB espacio en disco
+- Micrófono funcional
+
+**Pasos de instalación:**
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/Czamudioo121/EduVoz.git
+cd EduVoz
+
+# 2. Crear entorno virtual
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate   # Windows
+
+# 3. Instalar dependencias
+pip install -r requirements.txt
+
+# 4. Configurar base de datos
+mysql -u root -p
+CREATE DATABASE eduvoz_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+exit
+mysql -u root -p eduvoz_db < tt.sql
+
+# 5. Configurar variables de entorno
+cp .env.example .env
+# Editar .env con configuraciones locales
+
+# 6. Ejecutar aplicación
+python app.py
+```
+
+**Configuración de variables (.env):**
+
+```bash
+# Base de datos
+DB_HOST=localhost
+DB_USER=tu_usuario
+DB_PASSWORD=tu_password
+DB_NAME=eduvoz_db
+
+# Flask
+SECRET_KEY=tu_clave_secreta_muy_segura
+FLASK_ENV=development
+
+# DeepSpeech
+DEEPSPEECH_MODEL_PATH=models/deepspeech-0.9.3-models.pbmm
+DEEPSPEECH_SCORER_PATH=models/deepspeech-0.9.3-models.scorer
+
+# Directorios
+UPLOAD_FOLDER=static/img/usuarios
+MAX_CONTENT_LENGTH=16777216
+```
+
+---
+
+## Conclusiones
+
+EduVoz representa una solución innovadora que integra **tecnologías avanzadas de reconocimiento de voz con principios sólidos de educación infantil**. El proyecto surge de una necesidad real identificada durante la pandemia COVID-19 y se fundamenta en investigación exhaustiva tanto técnica como pedagógica.
+
+**Aspectos destacados del proyecto:**
+
+- **Investigación fundamentada**: Basado en entrevistas con docentes, encuestas a tutores y análisis del estado del arte
+- **Diseño centrado en el usuario**: UI/UX específicamente diseñado para niños de 4-5 años aplicando psicología del color y principios de usabilidad infantil
+- **Arquitectura robusta**: Stack tecnológico moderno con Python/Flask, DeepSpeech y MariaDB
+- **Validación exitosa**: 95% de aceptación por parte de tutores y validación positiva con docentes
+- **Alineación curricular**: Integrado con el programa de estudios de la SEP para preescolar
+
+El proyecto demuestra cómo la **combinación de investigación rigurosa, diseño centrado en el usuario y tecnologías apropiadas** puede crear herramientas educativas efectivas que aborden necesidades reales del sistema educativo mexicano.
+
+---
+
+*Desarrollado por: Villalobos Sánchez Ezequiel y Zamudio Onofre César Osvaldo*  
+*Instituto Politécnico Nacional - Escuela Superior de Cómputo*  
+*Repositorio: [https://github.com/Czamudioo121/EduVoz](https://github.com/Czamudioo121/EduVoz)*    Activo BOOLEAN DEFAULT TRUE,
     FOREIGN KEY (CorreoDocente) REFERENCES Docente(CorreoDocente) ON DELETE CASCADE,
     INDEX idx_docente (CorreoDocente)
 );
